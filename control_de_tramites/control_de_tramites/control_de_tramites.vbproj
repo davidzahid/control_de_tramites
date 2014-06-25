@@ -258,8 +258,8 @@
     </None>
     <None Include="registro_control_tramites.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>registro_control_tramites.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>registro_control_tramites1.Designer.vb</LastGenOutput>
     </None>
     <None Include="registro_control_tramites.xss">
       <DependentUpon>registro_control_tramites.xsd</DependentUpon>

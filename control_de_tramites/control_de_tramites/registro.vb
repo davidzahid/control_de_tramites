@@ -22,6 +22,8 @@
         Me.Registro_control_tramitesTableAdapter.Fill(Me.Registro_control_tramites._registro_control_tramites)
         'TODO: esta línea de código carga datos en la tabla 'Registro_control_tramites._registro_control_tramites' Puede moverla o quitarla según sea necesario.
         Me.Registro_control_tramitesTableAdapter.Fill(Me.Registro_control_tramites._registro_control_tramites)
+        'TODO: esta línea de código carga datos en la tabla 'Registro_control_tramites._registro_control_tramites' Puede moverla o quitarla según sea necesario.
+        Me.Registro_control_tramitesTableAdapter.Fill(Me.Registro_control_tramites._registro_control_tramites)
     End Sub
 
     Private Sub Registro_control_tramitesBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs)
@@ -30,7 +32,7 @@
         Me.TableAdapterManager.UpdateAll(Me.Registro_control_tramites)
     End Sub
 
-    Private Sub Registro_control_tramitesBindingNavigatorSaveItem_Click_2(sender As Object, e As EventArgs) Handles Registro_control_tramitesBindingNavigatorSaveItem.Click
+    Private Sub Registro_control_tramitesBindingNavigatorSaveItem_Click_2(sender As Object, e As EventArgs)
 
         Me.Validate()
         Me.Registro_control_tramitesBindingSource.EndEdit()
@@ -114,24 +116,22 @@
             If (txtEdad.Text = "") Then
                 txtEdad.Text = 0
             End If
+
+
             Me.Registro_control_tramitesTableAdapter.guardar_registro(dtFechaIngreso.Text, txtNut.Text, txtNombre.Text, cbxNacionalidad.Text, txtDocumentoRecibido.Text, cbxTramiteSolicitado.Text, cbxResidente.Text, txtActividad.Text, cbxSexo.Text, dtFechaNacimiento.Text, txtEdad.Text, txtPersonaAutorizada.Text, cbxStatus.Text, cbxRecibidoPor.Text, cbxLoResuelve.Text, txtAlcance.Text, txtObservaciones.Text, txtCalle.Text, txtColonia.Text, txtMunicipio.Text, txtCP.Text, txtTelefono.Text, txtCorreoElectronico.Text, txtEmpresaServicio.Text, txtDocumentoEntregado.Text)
             Me.Registro_control_tramitesTableAdapter.Fill(Me.Registro_control_tramites._registro_control_tramites)
             MessageBox.Show("Guardado Correctamente")
+
         Catch ex As Exception
             MessageBox.Show("Imposible Guardar")
         End Try
     End Sub
 
-    Private Sub dtFechaIngreso_ValueChanged(sender As Object, e As EventArgs) Handles dtFechaIngreso.ValueChanged
-        'GENERAR ID'
-        txtIdControlGuardar.Text = Val(Me.Registro_control_tramitesTableAdapter.identificador())
-        If txtIdControlGuardar.Text = "" Then
-            txtIdControlGuardar.Text = 0
-        End If
-        txtIdControlGuardar.Text = txtIdControlGuardar.Text + 1
+    Private Sub dtFechaIngreso_ValueChanged(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub dtFechaNacimiento_TextChanged(sender As Object, e As EventArgs) Handles dtFechaNacimiento.TextChanged
+    Private Sub dtFechaNacimiento_TextChanged(sender As Object, e As EventArgs) Handles dtFechaNacimiento.TextChanged, dtFechaIngreso.TextChanged
         txtFecha.Text = dtFechaNacimiento.Text
     End Sub
     Private Sub txtFecha_TextChanged(sender As Object, e As EventArgs) Handles txtFecha.TextChanged
@@ -251,4 +251,55 @@
         End Try
     End Sub
 
+    Private Sub Registro_control_tramitesBindingNavigatorSaveItem_Click_3(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.Registro_control_tramitesBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.Registro_control_tramites)
+
+    End Sub
+
+    Private Sub Registro_control_tramitesBindingNavigatorSaveItem_Click_4(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.Registro_control_tramitesBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.Registro_control_tramites)
+
+    End Sub
+
+    Private Sub Registro_control_tramitesBindingNavigatorSaveItem_Click_5(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.Registro_control_tramitesBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.Registro_control_tramites)
+
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click, EliminarToolStripMenuItem.Click
+        If txtIdControl.Text = "" Then
+            MessageBox.Show("SELECCIONE EL REGISTRO A ELIMINAR")
+        Else
+            Dim Mensaje, Estilo, Título, Respuesta, MiCadena
+            Mensaje = "¿Esta seguro que desea eliminar este registro?"
+            Estilo = vbYesNo + vbCritical
+            Título = "ADVERTENCIA"
+            Respuesta = MsgBox(Mensaje, Estilo, Título)
+            If Respuesta = vbYes Then
+                MiCadena = "S"
+                Me.Registro_control_tramitesTableAdapter.eliminar_registro(txtIdControl.Text)
+                Me.Registro_control_tramitesTableAdapter.Fill(Me.Registro_control_tramites._registro_control_tramites)
+                txtIdControl.Text = ""
+            Else
+                MiCadena = "No"
+                txtIdControl.Text = ""
+            End If
+        End If
+    End Sub
+
+ 
+    Private Sub txtNut_TextChanged(sender As Object, e As EventArgs) Handles txtNut.TextChanged
+        'GENERAR ID'
+        txtIdControlGuardar.Text = Val(Me.Registro_control_tramitesTableAdapter.identificador())
+        If txtIdControlGuardar.Text = "" Then
+            txtIdControlGuardar.Text = 0
+        End If
+        txtIdControlGuardar.Text = txtIdControlGuardar.Text + 1
+    End Sub
 End Class

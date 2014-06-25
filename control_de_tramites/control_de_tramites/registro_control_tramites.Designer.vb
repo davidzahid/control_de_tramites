@@ -3126,7 +3126,7 @@ Namespace registro_control_tramitesTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(6) {}
+            Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(7) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        id_control_tramite, fecha_ingreso, NUT, nombre, nacionalidad, docum" & _
@@ -3404,216 +3404,232 @@ Namespace registro_control_tramitesTableAdapters
             Me._commandCollection(4).Parameters.Add(param)
             Me._commandCollection(5) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(5).Connection = Me.Connection
-            Me._commandCollection(5).CommandText = "INSERT INTO registro_control_tramites" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                         (fecha_ingreso, N" & _
+            Me._commandCollection(5).CommandText = "DELETE FROM registro_control_tramites" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE        (id_control_tramite = @Param1" & _
+                ")"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@Param1"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = True
+            param.SourceColumn = "id_control_tramite"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6) = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._commandCollection(6).Connection = Me.Connection
+            Me._commandCollection(6).CommandText = "INSERT INTO registro_control_tramites" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                         (fecha_ingreso, N" & _
                 "UT, nombre, nacionalidad, documento_recibido, tramite_solicitado, residente, act" & _
                 "ividad, sexo, fecha_nacimiento, edad, persona_autorizada, status, recibido_por, " & _
                 "lo_resuelve, alcance_1, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                         observaciones, calle, colonia" & _
                 ", municipio, cp, telefono, correo_electronico, empresa_servicio, documento_entre" & _
-                "gado)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "VALUES        (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @" & _
-                "p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p2" & _
-                "5)"
-            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+                "gado)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "VALUES        (@Param1, @Param2, @Param3, @Param4, @Param5, @Param6, @Par" & _
+                "am7, @Param8, @Param9, @Param10, @Param11, @Param12, @Param13, @Param14, @Param1" & _
+                "5, @Param16, @Param17, @Param18, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                         @Param19, @Param20, " & _
+                "@Param21, @Param22, @Param23, @Param24, @Param25)"
+            Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
+            param.ParameterName = "@Param1"
             param.DbType = Global.System.Data.DbType.DateTime
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Timestamp
             param.IsNullable = True
             param.SourceColumn = "fecha_ingreso"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.ParameterName = "@Param2"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.Size = 9
             param.IsNullable = True
             param.SourceColumn = "NUT"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
+            param.ParameterName = "@Param3"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 255
             param.IsNullable = True
             param.SourceColumn = "nombre"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
+            param.ParameterName = "@Param4"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 80
             param.IsNullable = True
             param.SourceColumn = "nacionalidad"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
+            param.ParameterName = "@Param5"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 50
             param.IsNullable = True
             param.SourceColumn = "documento_recibido"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
+            param.ParameterName = "@Param6"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 150
             param.IsNullable = True
             param.SourceColumn = "tramite_solicitado"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
+            param.ParameterName = "@Param7"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 60
             param.IsNullable = True
             param.SourceColumn = "residente"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
+            param.ParameterName = "@Param8"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 50
             param.IsNullable = True
             param.SourceColumn = "actividad"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
+            param.ParameterName = "@Param9"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 11
             param.IsNullable = True
             param.SourceColumn = "sexo"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
+            param.ParameterName = "@Param10"
             param.DbType = Global.System.Data.DbType.DateTime
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Timestamp
             param.IsNullable = True
             param.SourceColumn = "fecha_nacimiento"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.ParameterName = "@Param11"
+            param.DbType = Global.System.Data.DbType.[String]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
+            param.Size = 3
             param.IsNullable = True
             param.SourceColumn = "edad"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p12"
+            param.ParameterName = "@Param12"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 255
             param.IsNullable = True
             param.SourceColumn = "persona_autorizada"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p13"
+            param.ParameterName = "@Param13"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 60
             param.IsNullable = True
             param.SourceColumn = "status"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p14"
+            param.ParameterName = "@Param14"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 150
             param.IsNullable = True
             param.SourceColumn = "recibido_por"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p15"
+            param.ParameterName = "@Param15"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 150
             param.IsNullable = True
             param.SourceColumn = "lo_resuelve"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p16"
+            param.ParameterName = "@Param16"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 80
             param.IsNullable = True
             param.SourceColumn = "alcance_1"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p17"
+            param.ParameterName = "@Param17"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 255
             param.IsNullable = True
             param.SourceColumn = "observaciones"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p18"
+            param.ParameterName = "@Param18"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 150
             param.IsNullable = True
             param.SourceColumn = "calle"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p19"
+            param.ParameterName = "@Param19"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 150
             param.IsNullable = True
             param.SourceColumn = "colonia"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p20"
+            param.ParameterName = "@Param20"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 100
             param.IsNullable = True
             param.SourceColumn = "municipio"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p21"
+            param.ParameterName = "@Param21"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 9
             param.IsNullable = True
             param.SourceColumn = "cp"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p22"
+            param.ParameterName = "@Param22"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 25
             param.IsNullable = True
             param.SourceColumn = "telefono"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p23"
+            param.ParameterName = "@Param23"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 100
             param.IsNullable = True
             param.SourceColumn = "correo_electronico"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p24"
+            param.ParameterName = "@Param24"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 100
             param.IsNullable = True
             param.SourceColumn = "empresa_servicio"
-            Me._commandCollection(5).Parameters.Add(param)
+            Me._commandCollection(6).Parameters.Add(param)
             param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p25"
+            param.ParameterName = "@Param25"
             param.DbType = Global.System.Data.DbType.[String]
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
             param.Size = 100
             param.IsNullable = True
             param.SourceColumn = "documento_entregado"
-            Me._commandCollection(5).Parameters.Add(param)
-            Me._commandCollection(6) = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._commandCollection(6).Connection = Me.Connection
-            Me._commandCollection(6).CommandText = "SELECT        MAX(id_control_tramite) AS Expr1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            registro_control_" & _
+            Me._commandCollection(6).Parameters.Add(param)
+            Me._commandCollection(7) = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._commandCollection(7).Connection = Me.Connection
+            Me._commandCollection(7).CommandText = "SELECT        MAX(id_control_tramite) AS Expr1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            registro_control_" & _
                 "tramites"
-            Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -4711,158 +4727,181 @@ Namespace registro_control_tramitesTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, False)> _
+        Public Overridable Overloads Function eliminar_registro(ByVal Param1 As Integer) As Integer
+            Dim command As Global.MySql.Data.MySqlClient.MySqlCommand = Me.CommandCollection(5)
+            command.Parameters(0).Value = CType(Param1, Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open()
+            End If
+            Dim returnValue As Integer
+            Try
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close()
+                End If
+            End Try
+            Return returnValue
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, False)> _
         Public Overridable Overloads Function guardar_registro( _
-                    ByVal p1 As Global.System.Nullable(Of Date), _
-                    ByVal p2 As Global.System.Nullable(Of Integer), _
-                    ByVal p3 As String, _
-                    ByVal p4 As String, _
-                    ByVal p5 As String, _
-                    ByVal p6 As String, _
-                    ByVal p7 As String, _
-                    ByVal p8 As String, _
-                    ByVal p9 As String, _
-                    ByVal p10 As Global.System.Nullable(Of Date), _
-                    ByVal p11 As Global.System.Nullable(Of Integer), _
-                    ByVal p12 As String, _
-                    ByVal p13 As String, _
-                    ByVal p14 As String, _
-                    ByVal p15 As String, _
-                    ByVal p16 As String, _
-                    ByVal p17 As String, _
-                    ByVal p18 As String, _
-                    ByVal p19 As String, _
-                    ByVal p20 As String, _
-                    ByVal p21 As String, _
-                    ByVal p22 As String, _
-                    ByVal p23 As String, _
-                    ByVal p24 As String, _
-                    ByVal p25 As String) As Integer
-            Dim command As Global.MySql.Data.MySqlClient.MySqlCommand = Me.CommandCollection(5)
-            If (p1.HasValue = True) Then
-                command.Parameters(0).Value = CType(p1.Value, Date)
+                    ByVal Param1 As Global.System.Nullable(Of Date), _
+                    ByVal Param2 As String, _
+                    ByVal Param3 As String, _
+                    ByVal Param4 As String, _
+                    ByVal Param5 As String, _
+                    ByVal Param6 As String, _
+                    ByVal Param7 As String, _
+                    ByVal Param8 As String, _
+                    ByVal Param9 As String, _
+                    ByVal Param10 As Global.System.Nullable(Of Date), _
+                    ByVal Param11 As String, _
+                    ByVal Param12 As String, _
+                    ByVal Param13 As String, _
+                    ByVal Param14 As String, _
+                    ByVal Param15 As String, _
+                    ByVal Param16 As String, _
+                    ByVal Param17 As String, _
+                    ByVal Param18 As String, _
+                    ByVal Param19 As String, _
+                    ByVal Param20 As String, _
+                    ByVal Param21 As String, _
+                    ByVal Param22 As String, _
+                    ByVal Param23 As String, _
+                    ByVal Param24 As String, _
+                    ByVal Param25 As String) As Integer
+            Dim command As Global.MySql.Data.MySqlClient.MySqlCommand = Me.CommandCollection(6)
+            If (Param1.HasValue = True) Then
+                command.Parameters(0).Value = CType(Param1.Value, Date)
             Else
                 command.Parameters(0).Value = Global.System.DBNull.Value
             End If
-            If (p2.HasValue = True) Then
-                command.Parameters(1).Value = CType(p2.Value, Integer)
-            Else
+            If (Param2 Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(Param2, String)
             End If
-            If (p3 Is Nothing) Then
+            If (Param3 Is Nothing) Then
                 command.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(2).Value = CType(p3, String)
+                command.Parameters(2).Value = CType(Param3, String)
             End If
-            If (p4 Is Nothing) Then
+            If (Param4 Is Nothing) Then
                 command.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(3).Value = CType(p4, String)
+                command.Parameters(3).Value = CType(Param4, String)
             End If
-            If (p5 Is Nothing) Then
+            If (Param5 Is Nothing) Then
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(4).Value = CType(p5, String)
+                command.Parameters(4).Value = CType(Param5, String)
             End If
-            If (p6 Is Nothing) Then
+            If (Param6 Is Nothing) Then
                 command.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(5).Value = CType(p6, String)
+                command.Parameters(5).Value = CType(Param6, String)
             End If
-            If (p7 Is Nothing) Then
+            If (Param7 Is Nothing) Then
                 command.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(6).Value = CType(p7, String)
+                command.Parameters(6).Value = CType(Param7, String)
             End If
-            If (p8 Is Nothing) Then
+            If (Param8 Is Nothing) Then
                 command.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(7).Value = CType(p8, String)
+                command.Parameters(7).Value = CType(Param8, String)
             End If
-            If (p9 Is Nothing) Then
+            If (Param9 Is Nothing) Then
                 command.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(8).Value = CType(p9, String)
+                command.Parameters(8).Value = CType(Param9, String)
             End If
-            If (p10.HasValue = True) Then
-                command.Parameters(9).Value = CType(p10.Value, Date)
+            If (Param10.HasValue = True) Then
+                command.Parameters(9).Value = CType(Param10.Value, Date)
             Else
                 command.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            If (p11.HasValue = True) Then
-                command.Parameters(10).Value = CType(p11.Value, Integer)
-            Else
+            If (Param11 Is Nothing) Then
                 command.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(10).Value = CType(Param11, String)
             End If
-            If (p12 Is Nothing) Then
+            If (Param12 Is Nothing) Then
                 command.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(11).Value = CType(p12, String)
+                command.Parameters(11).Value = CType(Param12, String)
             End If
-            If (p13 Is Nothing) Then
+            If (Param13 Is Nothing) Then
                 command.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(12).Value = CType(p13, String)
+                command.Parameters(12).Value = CType(Param13, String)
             End If
-            If (p14 Is Nothing) Then
+            If (Param14 Is Nothing) Then
                 command.Parameters(13).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(13).Value = CType(p14, String)
+                command.Parameters(13).Value = CType(Param14, String)
             End If
-            If (p15 Is Nothing) Then
+            If (Param15 Is Nothing) Then
                 command.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(14).Value = CType(p15, String)
+                command.Parameters(14).Value = CType(Param15, String)
             End If
-            If (p16 Is Nothing) Then
+            If (Param16 Is Nothing) Then
                 command.Parameters(15).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(15).Value = CType(p16, String)
+                command.Parameters(15).Value = CType(Param16, String)
             End If
-            If (p17 Is Nothing) Then
+            If (Param17 Is Nothing) Then
                 command.Parameters(16).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(16).Value = CType(p17, String)
+                command.Parameters(16).Value = CType(Param17, String)
             End If
-            If (p18 Is Nothing) Then
+            If (Param18 Is Nothing) Then
                 command.Parameters(17).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(17).Value = CType(p18, String)
+                command.Parameters(17).Value = CType(Param18, String)
             End If
-            If (p19 Is Nothing) Then
+            If (Param19 Is Nothing) Then
                 command.Parameters(18).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(18).Value = CType(p19, String)
+                command.Parameters(18).Value = CType(Param19, String)
             End If
-            If (p20 Is Nothing) Then
+            If (Param20 Is Nothing) Then
                 command.Parameters(19).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(19).Value = CType(p20, String)
+                command.Parameters(19).Value = CType(Param20, String)
             End If
-            If (p21 Is Nothing) Then
+            If (Param21 Is Nothing) Then
                 command.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(20).Value = CType(p21, String)
+                command.Parameters(20).Value = CType(Param21, String)
             End If
-            If (p22 Is Nothing) Then
+            If (Param22 Is Nothing) Then
                 command.Parameters(21).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(21).Value = CType(p22, String)
+                command.Parameters(21).Value = CType(Param22, String)
             End If
-            If (p23 Is Nothing) Then
+            If (Param23 Is Nothing) Then
                 command.Parameters(22).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(22).Value = CType(p23, String)
+                command.Parameters(22).Value = CType(Param23, String)
             End If
-            If (p24 Is Nothing) Then
+            If (Param24 Is Nothing) Then
                 command.Parameters(23).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(23).Value = CType(p24, String)
+                command.Parameters(23).Value = CType(Param24, String)
             End If
-            If (p25 Is Nothing) Then
+            If (Param25 Is Nothing) Then
                 command.Parameters(24).Value = Global.System.DBNull.Value
             Else
-                command.Parameters(24).Value = CType(p25, String)
+                command.Parameters(24).Value = CType(Param25, String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
@@ -4884,7 +4923,7 @@ Namespace registro_control_tramitesTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
         Public Overridable Overloads Function identificador() As Global.System.Nullable(Of Integer)
-            Dim command As Global.MySql.Data.MySqlClient.MySqlCommand = Me.CommandCollection(6)
+            Dim command As Global.MySql.Data.MySqlClient.MySqlCommand = Me.CommandCollection(7)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open) _
                         <> Global.System.Data.ConnectionState.Open) Then

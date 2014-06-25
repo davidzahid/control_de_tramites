@@ -49,7 +49,6 @@ Partial Class registro
         Me.lblTelefono = New System.Windows.Forms.Label()
         Me.lblCorreoElectronico = New System.Windows.Forms.Label()
         Me.lblEmpresaServicio = New System.Windows.Forms.Label()
-        Me.dtFechaIngreso = New System.Windows.Forms.DateTimePicker()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -81,22 +80,6 @@ Partial Class registro
         Me.txtEdad = New System.Windows.Forms.TextBox()
         Me.cbxSexo = New System.Windows.Forms.ComboBox()
         Me.dtFechaNacimiento = New System.Windows.Forms.DateTimePicker()
-        Me.Registro_control_tramitesBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.Registro_control_tramitesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Registro_control_tramites = New control_de_tramites.registro_control_tramites()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.Registro_control_tramitesBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.Registro_control_tramitesDataGridView = New System.Windows.Forms.DataGridView()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.txtIdControl = New System.Windows.Forms.TextBox()
@@ -115,15 +98,15 @@ Partial Class registro
         Me.ActualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GuardarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LimpiarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusrcarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BeneficiarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PendienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControlDeTramitesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtNombreSearch = New System.Windows.Forms.TextBox()
-        Me.Registro_control_tramitesTableAdapter = New control_de_tramites.registro_control_tramitesTableAdapters.registro_control_tramitesTableAdapter()
-        Me.TableAdapterManager = New control_de_tramites.registro_control_tramitesTableAdapters.TableAdapterManager()
         Me.lblNombreSearch = New System.Windows.Forms.Label()
+        Me.Registro_control_tramitesDataGridView = New System.Windows.Forms.DataGridView()
         Me.id_control_tramite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha_ingreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NUT = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -150,6 +133,7 @@ Partial Class registro
         Me.correo_electronico = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.empresa_servicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.documento_entregado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.IdcontroltramiteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaingresoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NUTDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -176,16 +160,19 @@ Partial Class registro
         Me.CorreoelectronicoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmpresaservicioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DocumentoentregadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Registro_control_tramitesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Registro_control_tramites = New control_de_tramites.registro_control_tramites()
+        Me.TableAdapterManager = New control_de_tramites.registro_control_tramitesTableAdapters.TableAdapterManager()
+        Me.Registro_control_tramitesTableAdapter = New control_de_tramites.registro_control_tramitesTableAdapters.registro_control_tramitesTableAdapter()
+        Me.dtFechaIngreso = New System.Windows.Forms.DateTimePicker()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.Registro_control_tramitesBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Registro_control_tramitesBindingNavigator.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.Registro_control_tramitesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Registro_control_tramitesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Registro_control_tramites, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Registro_control_tramitesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblFechaIngreso
@@ -413,16 +400,6 @@ Partial Class registro
         Me.lblEmpresaServicio.TabIndex = 1
         Me.lblEmpresaServicio.Text = "Empresa para la que presta servicios:"
         '
-        'dtFechaIngreso
-        '
-        Me.dtFechaIngreso.Checked = False
-        Me.dtFechaIngreso.CustomFormat = "MM/dd/yyyy"
-        Me.dtFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFechaIngreso.Location = New System.Drawing.Point(97, 3)
-        Me.dtFechaIngreso.Name = "dtFechaIngreso"
-        Me.dtFechaIngreso.Size = New System.Drawing.Size(119, 20)
-        Me.dtFechaIngreso.TabIndex = 1
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -553,12 +530,12 @@ Partial Class registro
         Me.Panel2.Controls.Add(Me.cbxNacionalidad)
         Me.Panel2.Controls.Add(Me.txtNombre)
         Me.Panel2.Controls.Add(Me.txtNut)
-        Me.Panel2.Controls.Add(Me.dtFechaIngreso)
         Me.Panel2.Controls.Add(Me.lblActividad)
         Me.Panel2.Controls.Add(Me.lblTramiteSolicitado)
         Me.Panel2.Controls.Add(Me.lblFechaIngreso)
         Me.Panel2.Controls.Add(Me.lblNut)
         Me.Panel2.Controls.Add(Me.lblNombre)
+        Me.Panel2.Controls.Add(Me.dtFechaIngreso)
         Me.Panel2.Controls.Add(Me.lblNacionalidad)
         Me.Panel2.Controls.Add(Me.lblDocumentoRecibido)
         Me.Panel2.Controls.Add(Me.cbxTramiteSolicitado)
@@ -753,142 +730,6 @@ Partial Class registro
         Me.dtFechaNacimiento.Size = New System.Drawing.Size(119, 20)
         Me.dtFechaNacimiento.TabIndex = 2
         '
-        'Registro_control_tramitesBindingNavigator
-        '
-        Me.Registro_control_tramitesBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.Registro_control_tramitesBindingNavigator.BindingSource = Me.Registro_control_tramitesBindingSource
-        Me.Registro_control_tramitesBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.Registro_control_tramitesBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.Registro_control_tramitesBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Registro_control_tramitesBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.Registro_control_tramitesBindingNavigatorSaveItem})
-        Me.Registro_control_tramitesBindingNavigator.Location = New System.Drawing.Point(0, 593)
-        Me.Registro_control_tramitesBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.Registro_control_tramitesBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.Registro_control_tramitesBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.Registro_control_tramitesBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.Registro_control_tramitesBindingNavigator.Name = "Registro_control_tramitesBindingNavigator"
-        Me.Registro_control_tramitesBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.Registro_control_tramitesBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.Registro_control_tramitesBindingNavigator.Size = New System.Drawing.Size(1068, 25)
-        Me.Registro_control_tramitesBindingNavigator.TabIndex = 6
-        Me.Registro_control_tramitesBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'Registro_control_tramitesBindingSource
-        '
-        Me.Registro_control_tramitesBindingSource.DataMember = "registro_control_tramites"
-        Me.Registro_control_tramitesBindingSource.DataSource = Me.Registro_control_tramites
-        '
-        'Registro_control_tramites
-        '
-        Me.Registro_control_tramites.DataSetName = "registro_control_tramites"
-        Me.Registro_control_tramites.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveFirstItem.Text = "Mover primero"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMovePreviousItem.Text = "Mover anterior"
-        '
-        'BindingNavigatorSeparator
-        '
-        Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorPositionItem
-        '
-        Me.BindingNavigatorPositionItem.AccessibleName = "Posición"
-        Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
-        Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 23)
-        Me.BindingNavigatorPositionItem.Text = "0"
-        Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
-        '
-        'BindingNavigatorSeparator1
-        '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveNextItem.Text = "Mover siguiente"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorMoveLastItem.Text = "Mover último"
-        '
-        'BindingNavigatorSeparator2
-        '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'Registro_control_tramitesBindingNavigatorSaveItem
-        '
-        Me.Registro_control_tramitesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.Registro_control_tramitesBindingNavigatorSaveItem.Image = CType(resources.GetObject("Registro_control_tramitesBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.Registro_control_tramitesBindingNavigatorSaveItem.Name = "Registro_control_tramitesBindingNavigatorSaveItem"
-        Me.Registro_control_tramitesBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
-        Me.Registro_control_tramitesBindingNavigatorSaveItem.Text = "Guardar datos"
-        '
-        'Registro_control_tramitesDataGridView
-        '
-        Me.Registro_control_tramitesDataGridView.AllowUserToDeleteRows = False
-        Me.Registro_control_tramitesDataGridView.AutoGenerateColumns = False
-        Me.Registro_control_tramitesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Registro_control_tramitesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_control_tramite, Me.fecha_ingreso, Me.NUT, Me.nombre, Me.nacionalidad, Me.documento_recibido, Me.tramite_solicitado, Me.residente, Me.actividad, Me.sexo, Me.fecha_nacimiento, Me.edad, Me.persona_autorizada, Me.status, Me.recibido_por, Me.lo_resuelve, Me.alcance_1, Me.observaciones, Me.calle, Me.colonia, Me.municipio, Me.cp, Me.telefono, Me.correo_electronico, Me.empresa_servicio, Me.documento_entregado, Me.IdcontroltramiteDataGridViewTextBoxColumn, Me.FechaingresoDataGridViewTextBoxColumn, Me.NUTDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.NacionalidadDataGridViewTextBoxColumn, Me.DocumentorecibidoDataGridViewTextBoxColumn, Me.TramitesolicitadoDataGridViewTextBoxColumn, Me.ResidenteDataGridViewTextBoxColumn, Me.ActividadDataGridViewTextBoxColumn, Me.SexoDataGridViewTextBoxColumn, Me.FechanacimientoDataGridViewTextBoxColumn, Me.EdadDataGridViewTextBoxColumn, Me.PersonaautorizadaDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.RecibidoporDataGridViewTextBoxColumn, Me.LoresuelveDataGridViewTextBoxColumn, Me.Alcance1DataGridViewTextBoxColumn, Me.ObservacionesDataGridViewTextBoxColumn, Me.CalleDataGridViewTextBoxColumn, Me.ColoniaDataGridViewTextBoxColumn, Me.MunicipioDataGridViewTextBoxColumn, Me.CpDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.CorreoelectronicoDataGridViewTextBoxColumn, Me.EmpresaservicioDataGridViewTextBoxColumn, Me.DocumentoentregadoDataGridViewTextBoxColumn})
-        Me.Registro_control_tramitesDataGridView.DataSource = Me.Registro_control_tramitesBindingSource
-        Me.Registro_control_tramitesDataGridView.Location = New System.Drawing.Point(52, 474)
-        Me.Registro_control_tramitesDataGridView.Name = "Registro_control_tramitesDataGridView"
-        Me.Registro_control_tramitesDataGridView.ReadOnly = True
-        Me.Registro_control_tramitesDataGridView.Size = New System.Drawing.Size(863, 110)
-        Me.Registro_control_tramitesDataGridView.TabIndex = 15
-        '
         'lblTitulo
         '
         Me.lblTitulo.AutoSize = True
@@ -906,7 +747,7 @@ Partial Class registro
         Me.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnModificar.Location = New System.Drawing.Point(921, 471)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(79, 35)
+        Me.btnModificar.Size = New System.Drawing.Size(79, 26)
         Me.btnModificar.TabIndex = 8
         Me.btnModificar.Tag = "Actualizar Datos"
         Me.btnModificar.Text = "Actualizar"
@@ -924,9 +765,9 @@ Partial Class registro
         'btnGuardar
         '
         Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnGuardar.Location = New System.Drawing.Point(921, 510)
+        Me.btnGuardar.Location = New System.Drawing.Point(921, 501)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(79, 35)
+        Me.btnGuardar.Size = New System.Drawing.Size(79, 26)
         Me.btnGuardar.TabIndex = 9
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
@@ -952,9 +793,9 @@ Partial Class registro
         'btnLimpiar
         '
         Me.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLimpiar.Location = New System.Drawing.Point(921, 549)
+        Me.btnLimpiar.Location = New System.Drawing.Point(921, 530)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(79, 35)
+        Me.btnLimpiar.Size = New System.Drawing.Size(79, 26)
         Me.btnLimpiar.TabIndex = 10
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
@@ -1004,7 +845,7 @@ Partial Class registro
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.OperacionesToolStripMenuItem, Me.BusrcarToolStripMenuItem, Me.ReportesToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1068, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1041, 24)
         Me.MenuStrip1.TabIndex = 12
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -1023,7 +864,7 @@ Partial Class registro
         '
         'OperacionesToolStripMenuItem
         '
-        Me.OperacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActualizarToolStripMenuItem, Me.GuardarToolStripMenuItem, Me.LimpiarToolStripMenuItem})
+        Me.OperacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActualizarToolStripMenuItem, Me.GuardarToolStripMenuItem, Me.LimpiarToolStripMenuItem, Me.EliminarToolStripMenuItem})
         Me.OperacionesToolStripMenuItem.Name = "OperacionesToolStripMenuItem"
         Me.OperacionesToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
         Me.OperacionesToolStripMenuItem.Text = "Operación"
@@ -1045,6 +886,12 @@ Partial Class registro
         Me.LimpiarToolStripMenuItem.Name = "LimpiarToolStripMenuItem"
         Me.LimpiarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.LimpiarToolStripMenuItem.Text = "Limpiar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'BusrcarToolStripMenuItem
         '
@@ -1087,16 +934,6 @@ Partial Class registro
         Me.txtNombreSearch.Size = New System.Drawing.Size(324, 20)
         Me.txtNombreSearch.TabIndex = 12
         '
-        'Registro_control_tramitesTableAdapter
-        '
-        Me.Registro_control_tramitesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.registro_control_tramitesTableAdapter = Me.Registro_control_tramitesTableAdapter
-        Me.TableAdapterManager.UpdateOrder = control_de_tramites.registro_control_tramitesTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'lblNombreSearch
         '
         Me.lblNombreSearch.Location = New System.Drawing.Point(50, 454)
@@ -1104,6 +941,18 @@ Partial Class registro
         Me.lblNombreSearch.Size = New System.Drawing.Size(141, 17)
         Me.lblNombreSearch.TabIndex = 0
         Me.lblNombreSearch.Text = "Ingresa nombre a buscar:"
+        '
+        'Registro_control_tramitesDataGridView
+        '
+        Me.Registro_control_tramitesDataGridView.AutoGenerateColumns = False
+        Me.Registro_control_tramitesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Registro_control_tramitesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_control_tramite, Me.fecha_ingreso, Me.NUT, Me.nombre, Me.nacionalidad, Me.documento_recibido, Me.tramite_solicitado, Me.residente, Me.actividad, Me.sexo, Me.fecha_nacimiento, Me.edad, Me.persona_autorizada, Me.status, Me.recibido_por, Me.lo_resuelve, Me.alcance_1, Me.observaciones, Me.calle, Me.colonia, Me.municipio, Me.cp, Me.telefono, Me.correo_electronico, Me.empresa_servicio, Me.documento_entregado, Me.IdcontroltramiteDataGridViewTextBoxColumn, Me.FechaingresoDataGridViewTextBoxColumn, Me.NUTDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.NacionalidadDataGridViewTextBoxColumn, Me.DocumentorecibidoDataGridViewTextBoxColumn, Me.TramitesolicitadoDataGridViewTextBoxColumn, Me.ResidenteDataGridViewTextBoxColumn, Me.ActividadDataGridViewTextBoxColumn, Me.SexoDataGridViewTextBoxColumn, Me.FechanacimientoDataGridViewTextBoxColumn, Me.EdadDataGridViewTextBoxColumn, Me.PersonaautorizadaDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.RecibidoporDataGridViewTextBoxColumn, Me.LoresuelveDataGridViewTextBoxColumn, Me.Alcance1DataGridViewTextBoxColumn, Me.ObservacionesDataGridViewTextBoxColumn, Me.CalleDataGridViewTextBoxColumn, Me.ColoniaDataGridViewTextBoxColumn, Me.MunicipioDataGridViewTextBoxColumn, Me.CpDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.CorreoelectronicoDataGridViewTextBoxColumn, Me.EmpresaservicioDataGridViewTextBoxColumn, Me.DocumentoentregadoDataGridViewTextBoxColumn})
+        Me.Registro_control_tramitesDataGridView.DataSource = Me.Registro_control_tramitesBindingSource
+        Me.Registro_control_tramitesDataGridView.Location = New System.Drawing.Point(52, 474)
+        Me.Registro_control_tramitesDataGridView.Name = "Registro_control_tramitesDataGridView"
+        Me.Registro_control_tramitesDataGridView.ReadOnly = True
+        Me.Registro_control_tramitesDataGridView.Size = New System.Drawing.Size(863, 110)
+        Me.Registro_control_tramitesDataGridView.TabIndex = 15
         '
         'id_control_tramite
         '
@@ -1239,9 +1088,11 @@ Partial Class registro
         'observaciones
         '
         Me.observaciones.DataPropertyName = "observaciones"
+        Me.observaciones.FillWeight = 160.0!
         Me.observaciones.HeaderText = "OBSERVACIONES"
         Me.observaciones.Name = "observaciones"
         Me.observaciones.ReadOnly = True
+        Me.observaciones.Width = 160
         '
         'calle
         '
@@ -1306,6 +1157,15 @@ Partial Class registro
         Me.documento_entregado.Name = "documento_entregado"
         Me.documento_entregado.ReadOnly = True
         Me.documento_entregado.Visible = False
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(921, 560)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(79, 26)
+        Me.btnEliminar.TabIndex = 16
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'IdcontroltramiteDataGridViewTextBoxColumn
         '
@@ -1515,13 +1375,43 @@ Partial Class registro
         Me.DocumentoentregadoDataGridViewTextBoxColumn.ReadOnly = True
         Me.DocumentoentregadoDataGridViewTextBoxColumn.Visible = False
         '
+        'Registro_control_tramitesBindingSource
+        '
+        Me.Registro_control_tramitesBindingSource.DataMember = "registro_control_tramites"
+        Me.Registro_control_tramitesBindingSource.DataSource = Me.Registro_control_tramites
+        '
+        'Registro_control_tramites
+        '
+        Me.Registro_control_tramites.DataSetName = "registro_control_tramites"
+        Me.Registro_control_tramites.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.registro_control_tramitesTableAdapter = Me.Registro_control_tramitesTableAdapter
+        Me.TableAdapterManager.UpdateOrder = control_de_tramites.registro_control_tramitesTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'Registro_control_tramitesTableAdapter
+        '
+        Me.Registro_control_tramitesTableAdapter.ClearBeforeFill = True
+        '
+        'dtFechaIngreso
+        '
+        Me.dtFechaIngreso.Checked = False
+        Me.dtFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFechaIngreso.Location = New System.Drawing.Point(97, 4)
+        Me.dtFechaIngreso.Name = "dtFechaIngreso"
+        Me.dtFechaIngreso.Size = New System.Drawing.Size(119, 20)
+        Me.dtFechaIngreso.TabIndex = 2
+        '
         'registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1068, 618)
+        Me.ClientSize = New System.Drawing.Size(1041, 618)
+        Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.lblNombreSearch)
         Me.Controls.Add(Me.txtNombreSearch)
         Me.Controls.Add(Me.Label4)
@@ -1537,13 +1427,14 @@ Partial Class registro
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.Registro_control_tramitesDataGridView)
-        Me.Controls.Add(Me.Registro_control_tramitesBindingNavigator)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximumSize = New System.Drawing.Size(1057, 657)
         Me.Name = "registro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Control de Tramites"
@@ -1554,14 +1445,11 @@ Partial Class registro
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.Registro_control_tramitesBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Registro_control_tramitesBindingNavigator.ResumeLayout(False)
-        Me.Registro_control_tramitesBindingNavigator.PerformLayout()
-        CType(Me.Registro_control_tramitesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Registro_control_tramites, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Registro_control_tramitesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.Registro_control_tramitesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Registro_control_tramitesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Registro_control_tramites, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1591,7 +1479,6 @@ Partial Class registro
     Friend WithEvents lblTelefono As System.Windows.Forms.Label
     Friend WithEvents lblCorreoElectronico As System.Windows.Forms.Label
     Friend WithEvents lblEmpresaServicio As System.Windows.Forms.Label
-    Friend WithEvents dtFechaIngreso As System.Windows.Forms.DateTimePicker
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
@@ -1620,23 +1507,7 @@ Partial Class registro
     Friend WithEvents txtMunicipio As System.Windows.Forms.ComboBox
     Friend WithEvents txtColonia As System.Windows.Forms.TextBox
     Friend WithEvents Registro_control_tramites As control_de_tramites.registro_control_tramites
-    Friend WithEvents Registro_control_tramitesBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Registro_control_tramitesTableAdapter As control_de_tramites.registro_control_tramitesTableAdapters.registro_control_tramitesTableAdapter
     Friend WithEvents TableAdapterManager As control_de_tramites.registro_control_tramitesTableAdapters.TableAdapterManager
-    Friend WithEvents Registro_control_tramitesBindingNavigator As System.Windows.Forms.BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorCountItem As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveFirstItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMovePreviousItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorPositionItem As System.Windows.Forms.ToolStripTextBox
-    Friend WithEvents BindingNavigatorSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents BindingNavigatorMoveNextItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorMoveLastItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents BindingNavigatorSeparator2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents Registro_control_tramitesBindingNavigatorSaveItem As System.Windows.Forms.ToolStripButton
-    Friend WithEvents Registro_control_tramitesDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents lblTitulo As System.Windows.Forms.Label
     Friend WithEvents btnModificar As System.Windows.Forms.Button
     Friend WithEvents txtIdControl As System.Windows.Forms.TextBox
@@ -1666,6 +1537,11 @@ Partial Class registro
     Friend WithEvents txtNombreSearch As System.Windows.Forms.TextBox
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents lblNombreSearch As System.Windows.Forms.Label
+    Friend WithEvents Registro_control_tramitesTableAdapter As control_de_tramites.registro_control_tramitesTableAdapters.registro_control_tramitesTableAdapter
+    Friend WithEvents Registro_control_tramitesDataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents Registro_control_tramitesBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents btnEliminar As System.Windows.Forms.Button
+    Friend WithEvents EliminarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents id_control_tramite As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents fecha_ingreso As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NUT As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1718,6 +1594,7 @@ Partial Class registro
     Friend WithEvents CorreoelectronicoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EmpresaservicioDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DocumentoentregadoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dtFechaIngreso As System.Windows.Forms.DateTimePicker
 
 
 
