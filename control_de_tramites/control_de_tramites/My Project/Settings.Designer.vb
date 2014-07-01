@@ -57,7 +57,7 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("server=10.100.19.208;user id=instituto;password=migracion;database=registro_contr"& _ 
+         Global.System.Configuration.DefaultSettingValueAttribute("server=10.100.19.123;user id=instituto;password=migracion;database=registro_contr"& _ 
             "ol_tramites")>  _
         Public ReadOnly Property registro_control_tramites() As String
             Get

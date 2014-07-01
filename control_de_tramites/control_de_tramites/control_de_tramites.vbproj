@@ -61,7 +61,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Tools.ico</ApplicationIcon>
+    <ApplicationIcon>task.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -159,16 +159,41 @@
     <Import Include="System.Windows.Forms.VisualStyles" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acerca de\desarrollador.Designer.vb">
+      <DependentUpon>desarrollador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Acerca de\desarrollador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\agregar_empleado.Designer.vb">
+      <DependentUpon>agregar_empleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\agregar_empleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\agregar_nacionalidad.Designer.vb">
+      <DependentUpon>agregar_nacionalidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\agregar_nacionalidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\agregar_status.Designer.vb">
+      <DependentUpon>agregar_status.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\agregar_status.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agregar\agregar_tramite.Designer.vb">
+      <DependentUpon>agregar_tramite.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Agregar\agregar_tramite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Modulos\buscar.Designer.vb">
       <DependentUpon>buscar.vb</DependentUpon>
     </Compile>
     <Compile Include="Modulos\buscar.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modulos\nut.Designer.vb">
-      <DependentUpon>nut.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Modulos\nut.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\status.Designer.vb">
@@ -207,20 +232,73 @@
     <Compile Include="registro_control_tramites.vb">
       <DependentUpon>registro_control_tramites.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Numero de Tramite\NUT.Designer.vb">
+      <DependentUpon>NUT.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Form1.vb">
+    <Compile Include="Numero de Tramite\NUT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporte_anual.Designer.vb">
+      <DependentUpon>reporte_anual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporte_anual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporte_diario.Designer.vb">
+      <DependentUpon>reporte_diario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporte_diario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporte_general.Designer.vb">
+      <DependentUpon>reporte_general.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporte_general.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporte_mensual.Designer.vb">
+      <DependentUpon>reporte_mensual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporte_mensual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporte_nacionalidad.Designer.vb">
+      <DependentUpon>reporte_nacionalidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporte_nacionalidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporte_tramite.Designer.vb">
+      <DependentUpon>reporte_tramite.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporte_tramite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tramites\Pendientes\pendientes_form.Designer.vb">
+      <DependentUpon>pendientes_form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tramites\Pendientes\pendientes_form.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Acerca de\desarrollador.resx">
+      <DependentUpon>desarrollador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\agregar_empleado.resx">
+      <DependentUpon>agregar_empleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\agregar_nacionalidad.resx">
+      <DependentUpon>agregar_nacionalidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\agregar_status.resx">
+      <DependentUpon>agregar_status.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Agregar\agregar_tramite.resx">
+      <DependentUpon>agregar_tramite.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\buscar.resx">
       <DependentUpon>buscar.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\nut.resx">
-      <DependentUpon>nut.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\status.resx">
@@ -231,18 +309,48 @@
       <DependentUpon>registro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\control_tramites_inm.rdlc" />
-    <EmbeddedResource Include="Reportes\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Numero de Tramite\NUT.resx">
+      <DependentUpon>NUT.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporte_nacionalidad.rdlc" />
+    <EmbeddedResource Include="Reportes\reporte_nacionalidad.resx">
+      <DependentUpon>reporte_nacionalidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporte_tramite.rdlc" />
+    <EmbeddedResource Include="Reportes\reporte_anual.resx">
+      <DependentUpon>reporte_anual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporte_diario.resx">
+      <DependentUpon>reporte_diario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporte_general.rdlc" />
+    <EmbeddedResource Include="Reportes\reporte_general.resx">
+      <DependentUpon>reporte_general.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporte_anual.rdlc" />
+    <EmbeddedResource Include="Reportes\reporte_diario.rdlc" />
+    <EmbeddedResource Include="Reportes\reporte_mensual.rdlc" />
+    <EmbeddedResource Include="Reportes\reporte_mensual.resx">
+      <DependentUpon>reporte_mensual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\reporte_tramite.resx">
+      <DependentUpon>reporte_tramite.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tramites\Pendientes\pendientes_form.resx">
+      <DependentUpon>pendientes_form.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Reportes\app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -255,18 +363,45 @@
     </None>
     <None Include="registro_control_tramites.xsc">
       <DependentUpon>registro_control_tramites.xsd</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="registro_control_tramites.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>registro_control_tramites.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>registro_control_tramites.Designer.vb</LastGenOutput>
     </None>
     <None Include="registro_control_tramites.xss">
       <DependentUpon>registro_control_tramites.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Tools.ico" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\lmromancaps10-regular.otf" />
+    <None Include="Resources\update.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\erase.png" />
+    <None Include="Resources\erase1.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\people.png" />
+    <None Include="Resources\status.png" />
+    <None Include="Resources\general.png" />
+    <None Include="Resources\general1.png" />
+    <None Include="Resources\year.png" />
+    <None Include="Resources\month.png" />
+    <None Include="Resources\NUT.png" />
+    <None Include="Resources\logo.bmp" />
+    <None Include="Resources\task.png" />
+    <None Include="Resources\desarrollador.png" />
+    <None Include="Resources\sis1.png" />
+    <None Include="Resources\sincronizar.png" />
+    <None Include="Resources\day.png" />
+    <None Include="Resources\nation.png" />
+    <None Include="Resources\notification.png" />
+    <None Include="Resources\tramite.png" />
+    <None Include="Resources\national.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\personal.png" />
+    <Content Include="task.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

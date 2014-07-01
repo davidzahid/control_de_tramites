@@ -7,8 +7,8 @@
         <Value>inm</Value>
         <MIMEType>image/gif</MIMEType>
         <Sizing>FitProportional</Sizing>
-        <Top>0.3175cm</Top>
-        <Left>0.37042cm</Left>
+        <Top>0.25378cm</Top>
+        <Left>0.33082cm</Left>
         <Height>2.69104cm</Height>
         <Width>5.09833cm</Width>
         <Style>
@@ -1003,7 +1003,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!fecha_ingreso.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>d</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1303,7 +1305,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!fecha_nacimiento.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>d</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1787,10 +1791,45 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>3.64807cm</Top>
-        <Left>0.05292cm</Left>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Year(Fields!fecha_ingreso.Value)</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>=Year(Parameters!fecha_ingreso.Value)</FilterValue>
+            </FilterValues>
+          </Filter>
+          <Filter>
+            <FilterExpression>=Fields!nacionalidad.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>=Parameters!nacionalidad.Value</FilterValue>
+            </FilterValues>
+          </Filter>
+          <Filter>
+            <FilterExpression>=Fields!tramite_solicitado.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>=Parameters!tramite.Value</FilterValue>
+            </FilterValues>
+          </Filter>
+          <Filter>
+            <FilterExpression>=Month(Fields!fecha_ingreso.Value)</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>=Month(Parameters!fecha_ingreso.Value)</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
+        <SortExpressions>
+          <SortExpression>
+            <Value>=Fields!fecha_ingreso.Value</Value>
+          </SortExpression>
+        </SortExpressions>
+        <Top>3.58753cm</Top>
+        <Left>0.01332cm</Left>
         <Height>1.99375cm</Height>
-        <Width>77.18153cm</Width>
+        <Width>77.1815cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1820,8 +1859,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox90</rd:DefaultName>
-        <Top>0.28787cm</Top>
-        <Left>5.46875cm</Left>
+        <Top>0.25696cm</Top>
+        <Left>5.42915cm</Left>
         <Height>0.6cm</Height>
         <Width>11.15187cm</Width>
         <ZIndex>2</ZIndex>
@@ -1857,8 +1896,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox90</rd:DefaultName>
-        <Top>0.9937cm</Top>
-        <Left>5.46875cm</Left>
+        <Top>0.93316cm</Top>
+        <Left>5.42915cm</Left>
         <Height>0.6cm</Height>
         <Width>11.15187cm</Width>
         <ZIndex>3</ZIndex>
@@ -1894,8 +1933,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox90</rd:DefaultName>
-        <Top>1.73481cm</Top>
-        <Left>5.46875cm</Left>
+        <Top>1.67427cm</Top>
+        <Left>5.42915cm</Left>
         <Height>0.6cm</Height>
         <Width>11.15188cm</Width>
         <ZIndex>4</ZIndex>
@@ -1916,7 +1955,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>CONTROL DE TRAMITES MIGRATORIOS 2014</Value>
+                <Value>CONTROL DE TRAMITES MIGRATORIOS</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontSize>11pt</FontSize>
@@ -1931,10 +1970,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox90</rd:DefaultName>
-        <Top>2.40536cm</Top>
-        <Left>5.46875cm</Left>
+        <Top>2.34482cm</Top>
+        <Left>5.42915cm</Left>
         <Height>0.6cm</Height>
-        <Width>11.15188cm</Width>
+        <Width>7.92804cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -1946,11 +1985,48 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox94">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!fecha_ingreso.Value</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox90</rd:DefaultName>
+        <Top>2.34482cm</Top>
+        <Left>13.53358cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.04745cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>3.80208in</Height>
+    <Height>3.89583in</Height>
     <Style />
   </Body>
-  <Width>30.40726in</Width>
+  <Width>32.73017in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -1968,7 +2044,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>02480753-1393-410c-8217-4eeb41999187</rd:DataSourceID>
+      <rd:DataSourceID>53cf7c4e-7eda-4a0b-878d-68b31824feea</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -1988,7 +2064,7 @@
         </Field>
         <Field Name="NUT">
           <DataField>NUT</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="nombre">
           <DataField>nombre</DataField>
@@ -2024,7 +2100,7 @@
         </Field>
         <Field Name="edad">
           <DataField>edad</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="persona_autorizada">
           <DataField>persona_autorizada</DataField>
@@ -2093,6 +2169,27 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="fecha_ingreso">
+      <DataType>DateTime</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="nacionalidad">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="tramite">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DataSet1</DataSetName>
+          <ValueField>tramite_solicitado</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <EmbeddedImages>
     <EmbeddedImage Name="inm">
       <MIMEType>image/gif</MIMEType>
@@ -2131,5 +2228,5 @@ wBJKK42ygSqv7LFNTizcMK4PRyzRxM8aa7FQGOO6sTM678b1Vj3PC3jggg9OeOGGH4544oovznjjjj8O
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>01255b5b-d429-4fd2-9f20-3c6e4c7d7585</rd:ReportID>
+  <rd:ReportID>8a2b9685-e195-4103-855c-94b592a4b432</rd:ReportID>
 </Report>
