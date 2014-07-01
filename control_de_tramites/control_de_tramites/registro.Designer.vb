@@ -49,10 +49,10 @@ Partial Class registro
         Me.lblTelefono = New System.Windows.Forms.Label()
         Me.lblCorreoElectronico = New System.Windows.Forms.Label()
         Me.lblEmpresaServicio = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.txtEmpresaServicio = New System.Windows.Forms.TextBox()
+        Me.txtNombreSearch = New System.Windows.Forms.TextBox()
+        Me.lblNombreSearch = New System.Windows.Forms.Label()
         Me.txtCorreoElectronico = New System.Windows.Forms.TextBox()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.txtCP = New System.Windows.Forms.TextBox()
@@ -65,17 +65,23 @@ Partial Class registro
         Me.txtActividad = New System.Windows.Forms.TextBox()
         Me.txtDocumentoRecibido = New System.Windows.Forms.TextBox()
         Me.cbxNacionalidad = New System.Windows.Forms.ComboBox()
+        Me.NacionalidadBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Registro_control_tramites = New control_de_tramites.registro_control_tramites()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.txtNut = New System.Windows.Forms.TextBox()
+        Me.dtFechaIngreso = New System.Windows.Forms.DateTimePicker()
         Me.cbxTramiteSolicitado = New System.Windows.Forms.ComboBox()
+        Me.TramitesolicitadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txtObservaciones = New System.Windows.Forms.TextBox()
         Me.txtDocumentoEntregado = New System.Windows.Forms.TextBox()
         Me.txtAlcance = New System.Windows.Forms.TextBox()
         Me.cbxLoResuelve = New System.Windows.Forms.ComboBox()
+        Me.NombreempleadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.cbxRecibidoPor = New System.Windows.Forms.ComboBox()
         Me.cbxResidente = New System.Windows.Forms.ComboBox()
         Me.cbxStatus = New System.Windows.Forms.ComboBox()
+        Me.TipostatusBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.txtPersonaAutorizada = New System.Windows.Forms.TextBox()
         Me.txtEdad = New System.Windows.Forms.TextBox()
         Me.cbxSexo = New System.Windows.Forms.ComboBox()
@@ -88,24 +94,38 @@ Partial Class registro
         Me.txtFecha = New System.Windows.Forms.TextBox()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SincronizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NotificacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PendientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OperacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GuardarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LimpiarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgregarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NacionalidadToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TramiteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatusToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PersonalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusrcarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BeneficiarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PendienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NUTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AnioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ControlDeTramitesPorMesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DiarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ControlDeTramitesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.txtNombreSearch = New System.Windows.Forms.TextBox()
-        Me.lblNombreSearch = New System.Windows.Forms.Label()
+        Me.NacionalidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TramiteSolicitadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NacionalidadToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DesarrolladorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Registro_control_tramitesDataGridView = New System.Windows.Forms.DataGridView()
         Me.id_control_tramite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha_ingreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -133,7 +153,6 @@ Partial Class registro
         Me.correo_electronico = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.empresa_servicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.documento_entregado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.IdcontroltramiteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaingresoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NUTDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -161,24 +180,42 @@ Partial Class registro
         Me.EmpresaservicioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DocumentoentregadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Registro_control_tramitesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Registro_control_tramites = New control_de_tramites.registro_control_tramites()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.dtFechaControl = New System.Windows.Forms.DateTimePicker()
+        Me.lblFecha = New System.Windows.Forms.Label()
         Me.TableAdapterManager = New control_de_tramites.registro_control_tramitesTableAdapters.TableAdapterManager()
         Me.Registro_control_tramitesTableAdapter = New control_de_tramites.registro_control_tramitesTableAdapters.registro_control_tramitesTableAdapter()
-        Me.dtFechaIngreso = New System.Windows.Forms.DateTimePicker()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Registro_control_tramites1 = New control_de_tramites.registro_control_tramites()
+        Me.Tramite_solicitadoTableAdapter = New control_de_tramites.registro_control_tramitesTableAdapters.tramite_solicitadoTableAdapter()
+        Me.Tipo_statusTableAdapter = New control_de_tramites.registro_control_tramitesTableAdapters.tipo_statusTableAdapter()
+        Me.Nombre_empleadoTableAdapter = New control_de_tramites.registro_control_tramitesTableAdapters.nombre_empleadoTableAdapter()
+        Me.NacionalidadTableAdapter = New control_de_tramites.registro_control_tramitesTableAdapters.nacionalidadTableAdapter()
+        Me.actualizar = New System.Windows.Forms.ProgressBar()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.RegistrocontroltramitesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NombreempleadoBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.NacionalidadBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Registro_control_tramites, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TramitesolicitadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.NombreempleadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TipostatusBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.Registro_control_tramitesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Registro_control_tramitesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Registro_control_tramites, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Registro_control_tramites1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RegistrocontroltramitesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NombreempleadoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblFechaIngreso
         '
         Me.lblFechaIngreso.AutoSize = True
-        Me.lblFechaIngreso.Location = New System.Drawing.Point(-2, 8)
+        Me.lblFechaIngreso.Location = New System.Drawing.Point(1, 8)
         Me.lblFechaIngreso.Name = "lblFechaIngreso"
         Me.lblFechaIngreso.Size = New System.Drawing.Size(93, 13)
         Me.lblFechaIngreso.TabIndex = 1
@@ -214,7 +251,7 @@ Partial Class registro
         'lblDocumentoRecibido
         '
         Me.lblDocumentoRecibido.AutoSize = True
-        Me.lblDocumentoRecibido.Location = New System.Drawing.Point(0, 33)
+        Me.lblDocumentoRecibido.Location = New System.Drawing.Point(1, 33)
         Me.lblDocumentoRecibido.Name = "lblDocumentoRecibido"
         Me.lblDocumentoRecibido.Size = New System.Drawing.Size(110, 13)
         Me.lblDocumentoRecibido.TabIndex = 1
@@ -241,7 +278,7 @@ Partial Class registro
         'lblActividad
         '
         Me.lblActividad.AutoSize = True
-        Me.lblActividad.Location = New System.Drawing.Point(0, 64)
+        Me.lblActividad.Location = New System.Drawing.Point(1, 64)
         Me.lblActividad.Name = "lblActividad"
         Me.lblActividad.Size = New System.Drawing.Size(54, 13)
         Me.lblActividad.TabIndex = 1
@@ -250,7 +287,7 @@ Partial Class registro
         'lblSexo
         '
         Me.lblSexo.AutoSize = True
-        Me.lblSexo.Location = New System.Drawing.Point(-2, 10)
+        Me.lblSexo.Location = New System.Drawing.Point(1, 10)
         Me.lblSexo.Name = "lblSexo"
         Me.lblSexo.Size = New System.Drawing.Size(34, 13)
         Me.lblSexo.TabIndex = 1
@@ -259,7 +296,7 @@ Partial Class registro
         'lblFechadeNacimiento
         '
         Me.lblFechadeNacimiento.AutoSize = True
-        Me.lblFechadeNacimiento.Location = New System.Drawing.Point(165, 7)
+        Me.lblFechadeNacimiento.Location = New System.Drawing.Point(165, 10)
         Me.lblFechadeNacimiento.Name = "lblFechadeNacimiento"
         Me.lblFechadeNacimiento.Size = New System.Drawing.Size(111, 13)
         Me.lblFechadeNacimiento.TabIndex = 1
@@ -268,7 +305,7 @@ Partial Class registro
         'lblEdad
         '
         Me.lblEdad.AutoSize = True
-        Me.lblEdad.Location = New System.Drawing.Point(411, 7)
+        Me.lblEdad.Location = New System.Drawing.Point(411, 10)
         Me.lblEdad.Name = "lblEdad"
         Me.lblEdad.Size = New System.Drawing.Size(35, 13)
         Me.lblEdad.TabIndex = 1
@@ -277,7 +314,7 @@ Partial Class registro
         'lblPersonaAutorizada
         '
         Me.lblPersonaAutorizada.AutoSize = True
-        Me.lblPersonaAutorizada.Location = New System.Drawing.Point(530, 10)
+        Me.lblPersonaAutorizada.Location = New System.Drawing.Point(527, 10)
         Me.lblPersonaAutorizada.Name = "lblPersonaAutorizada"
         Me.lblPersonaAutorizada.Size = New System.Drawing.Size(102, 13)
         Me.lblPersonaAutorizada.TabIndex = 1
@@ -286,7 +323,7 @@ Partial Class registro
         'lblStatus
         '
         Me.lblStatus.AutoSize = True
-        Me.lblStatus.Location = New System.Drawing.Point(-2, 48)
+        Me.lblStatus.Location = New System.Drawing.Point(1, 48)
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(40, 13)
         Me.lblStatus.TabIndex = 1
@@ -313,7 +350,7 @@ Partial Class registro
         'lblAlcance1
         '
         Me.lblAlcance1.AutoSize = True
-        Me.lblAlcance1.Location = New System.Drawing.Point(-1, 89)
+        Me.lblAlcance1.Location = New System.Drawing.Point(1, 89)
         Me.lblAlcance1.Name = "lblAlcance1"
         Me.lblAlcance1.Size = New System.Drawing.Size(58, 13)
         Me.lblAlcance1.TabIndex = 1
@@ -340,7 +377,7 @@ Partial Class registro
         'lblCalle
         '
         Me.lblCalle.AutoSize = True
-        Me.lblCalle.Location = New System.Drawing.Point(-1, 6)
+        Me.lblCalle.Location = New System.Drawing.Point(1, 6)
         Me.lblCalle.Name = "lblCalle"
         Me.lblCalle.Size = New System.Drawing.Size(33, 13)
         Me.lblCalle.TabIndex = 1
@@ -367,7 +404,7 @@ Partial Class registro
         'lblCP
         '
         Me.lblCP.AutoSize = True
-        Me.lblCP.Location = New System.Drawing.Point(-2, 35)
+        Me.lblCP.Location = New System.Drawing.Point(1, 35)
         Me.lblCP.Name = "lblCP"
         Me.lblCP.Size = New System.Drawing.Size(33, 13)
         Me.lblCP.TabIndex = 1
@@ -376,7 +413,7 @@ Partial Class registro
         'lblTelefono
         '
         Me.lblTelefono.AutoSize = True
-        Me.lblTelefono.Location = New System.Drawing.Point(154, 35)
+        Me.lblTelefono.Location = New System.Drawing.Point(132, 35)
         Me.lblTelefono.Name = "lblTelefono"
         Me.lblTelefono.Size = New System.Drawing.Size(52, 13)
         Me.lblTelefono.TabIndex = 1
@@ -385,7 +422,7 @@ Partial Class registro
         'lblCorreoElectronico
         '
         Me.lblCorreoElectronico.AutoSize = True
-        Me.lblCorreoElectronico.Location = New System.Drawing.Point(424, 35)
+        Me.lblCorreoElectronico.Location = New System.Drawing.Point(363, 35)
         Me.lblCorreoElectronico.Name = "lblCorreoElectronico"
         Me.lblCorreoElectronico.Size = New System.Drawing.Size(97, 13)
         Me.lblCorreoElectronico.TabIndex = 1
@@ -394,26 +431,17 @@ Partial Class registro
         'lblEmpresaServicio
         '
         Me.lblEmpresaServicio.AutoSize = True
-        Me.lblEmpresaServicio.Location = New System.Drawing.Point(0, 69)
+        Me.lblEmpresaServicio.Location = New System.Drawing.Point(1, 69)
         Me.lblEmpresaServicio.Name = "lblEmpresaServicio"
         Me.lblEmpresaServicio.Size = New System.Drawing.Size(183, 13)
         Me.lblEmpresaServicio.TabIndex = 1
         Me.lblEmpresaServicio.Text = "Empresa para la que presta servicios:"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(55, 29)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(134, 61)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.txtEmpresaServicio)
+        Me.Panel1.Controls.Add(Me.txtNombreSearch)
+        Me.Panel1.Controls.Add(Me.lblNombreSearch)
         Me.Panel1.Controls.Add(Me.txtCorreoElectronico)
         Me.Panel1.Controls.Add(Me.txtTelefono)
         Me.Panel1.Controls.Add(Me.txtCP)
@@ -431,35 +459,45 @@ Partial Class registro
         Me.Panel1.Controls.Add(Me.lblCP)
         Me.Panel1.Location = New System.Drawing.Point(52, 349)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(948, 102)
+        Me.Panel1.Size = New System.Drawing.Size(948, 122)
         Me.Panel1.TabIndex = 6
-        '
-        'Panel4
-        '
-        Me.Panel4.Location = New System.Drawing.Point(0, 102)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(478, 20)
-        Me.Panel4.TabIndex = 16
         '
         'txtEmpresaServicio
         '
-        Me.txtEmpresaServicio.Location = New System.Drawing.Point(189, 66)
+        Me.txtEmpresaServicio.Location = New System.Drawing.Point(190, 66)
         Me.txtEmpresaServicio.MaxLength = 100
         Me.txtEmpresaServicio.Name = "txtEmpresaServicio"
-        Me.txtEmpresaServicio.Size = New System.Drawing.Size(457, 20)
+        Me.txtEmpresaServicio.Size = New System.Drawing.Size(514, 20)
         Me.txtEmpresaServicio.TabIndex = 7
+        '
+        'txtNombreSearch
+        '
+        Me.txtNombreSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtNombreSearch.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.txtNombreSearch.Location = New System.Drawing.Point(128, 96)
+        Me.txtNombreSearch.Name = "txtNombreSearch"
+        Me.txtNombreSearch.Size = New System.Drawing.Size(324, 20)
+        Me.txtNombreSearch.TabIndex = 12
+        '
+        'lblNombreSearch
+        '
+        Me.lblNombreSearch.Location = New System.Drawing.Point(1, 99)
+        Me.lblNombreSearch.Name = "lblNombreSearch"
+        Me.lblNombreSearch.Size = New System.Drawing.Size(141, 17)
+        Me.lblNombreSearch.TabIndex = 0
+        Me.lblNombreSearch.Text = "Ingresa nombre a buscar:"
         '
         'txtCorreoElectronico
         '
-        Me.txtCorreoElectronico.Location = New System.Drawing.Point(527, 32)
+        Me.txtCorreoElectronico.Location = New System.Drawing.Point(465, 32)
         Me.txtCorreoElectronico.MaxLength = 100
         Me.txtCorreoElectronico.Name = "txtCorreoElectronico"
-        Me.txtCorreoElectronico.Size = New System.Drawing.Size(300, 20)
+        Me.txtCorreoElectronico.Size = New System.Drawing.Size(239, 20)
         Me.txtCorreoElectronico.TabIndex = 6
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(212, 32)
+        Me.txtTelefono.Location = New System.Drawing.Point(185, 32)
         Me.txtTelefono.MaxLength = 25
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(172, 20)
@@ -470,13 +508,13 @@ Partial Class registro
         Me.txtCP.Location = New System.Drawing.Point(36, 32)
         Me.txtCP.MaxLength = 9
         Me.txtCP.Name = "txtCP"
-        Me.txtCP.Size = New System.Drawing.Size(103, 20)
+        Me.txtCP.Size = New System.Drawing.Size(88, 20)
         Me.txtCP.TabIndex = 4
         '
         'txtMunicipio
         '
         Me.txtMunicipio.FormattingEnabled = True
-        Me.txtMunicipio.Items.AddRange(New Object() {"Acatlán", "Acaxochitlán", "Actopan", "Agua Blanca de Iturbide", "Ajacuba", "Alfajayucan", "Almoloya", "Apan", "Atitalaquia", "Atlapexco", "Atotonilco de Tula", "Atotonilco el Grande", "Calnali", "Cardonal", "Chapantongo", "Chapulhuacán", "Chilcuautla", "Cuautepec de Hinojosa", "El Arenal", "Eloxochitlán", "Emiliano Zapata", "Epazoyucan", "Francisco I. Madero", "Huasca de Ocampo", "Huautla", "Huazalingo", "Huehuetla", "Huejutla de Reyes", "Huichapan", "Ixmiquilpan", "Jacala de Ledezma", "Jaltocán", "Juárez Hidalgo", "La Misión", "Lolotla", "Metepec", "Metztitlán", "Mineral de la Reforma", "Mineral del Chico", "Mineral del Monte", "Mixquiahuala de Juárez", "Molango de Escamilla", "Nicolás Flores", "Nopala de Villagrán", "Omitlán de Juárez", "Pachuca de Soto", "Pacula", "Pisaflores", "Progreso de Obregón", "San Agustín Metzquititlán", "San Agustín Tlaxiaca", "San Bartolo Tutotepec", "San Felipe Orizatlán", "San Salvador", "Santiago de Anaya", "Santiago Tulantepec de Lugo Guerre", "Singuilucan", "Tasquillo", "Tecozautla", "Tenango de Doria", "Tepeapulco", "Tepehuacán de Guerrero", "Tepeji del Río de Ocampo", "Tepetitlán", "Tetepango", "Tezontepec de Aldama", "Tianguistengo", "Tizayuca", "Tlahuelilpan", "Tlahuiltepa", "Tlanalapa", "Tlanchinol", "Tlaxcoapan", "Tolcayuca", "Tula de Allende", "Tulancingo de Bravo", "Villa de Tezontepec", "Xochiatipan", "Xochicoatlán", "Yahualica", "Zacualtipán de ?ngeles", "Zapotlán de Juárez", "Zempoala", "Zimapán"})
+        Me.txtMunicipio.Items.AddRange(New Object() {"ACATLÁN", "ACAXOCHITLÁN", "ACTOPAN", "AGUA BLANCA DE ITURBIDE", "AJACUBA", "ALFAJAYUCAN", "ALMOLOYA", "APAN", "ATITALAQUIA", "ATLAPEXCO", "ATOTONILCO DE TULA", "ATOTONILCO EL GRANDE", "CALNALI", "CARDONAL", "CHAPANTONGO", "CHAPULHUACÁN", "CHILCUAUTLA", "CUAUTEPEC DE HINOJOSA", "EL ARENAL", "ELOXOCHITLÁN", "EMILIANO ZAPATA", "EPAZOYUCAN", "FRANCISCO I. MADERO", "HUASCA DE OCAMPO", "HUAUTLA", "HUAZALINGO", "HUEHUETLA", "HUEJUTLA DE REYES", "HUICHAPAN", "IXMIQUILPAN", "JACALA DE LEDEZMA", "JALTOCÁN", "JUÁREZ HIDALGO", "LA MISIÓN", "LOLOTLA", "METEPEC", "METZTITLÁN", "MINERAL DE LA REFORMA", "MINERAL DEL CHICO", "MINERAL DEL MONTE", "MIXQUIAHUALA DE JUÁREZ", "MOLANGO DE ESCAMILLA", "NICOLÁS FLORES", "NOPALA DE VILLAGRÁN", "OMITLÁN DE JUÁREZ", "PACHUCA DE SOTO", "PACULA", "PISAFLORES", "PROGRESO DE OBREGÓN", "SAN AGUSTÍN METZQUITITLÁN", "SAN AGUSTÍN TLAXIACA", "SAN BARTOLO TUTOTEPEC", "SAN FELIPE ORIZATLÁN", "SAN SALVADOR", "SANTIAGO DE ANAYA", "SANTIAGO TULANTEPEC DE LUGO GUERRE", "SINGUILUCAN", "TASQUILLO", "TECOZAUTLA", "TENANGO DE DORIA", "TEPEAPULCO", "TEPEHUACÁN DE GUERRERO", "TEPEJI DEL RÍO DE OCAMPO", "TEPETITLÁN", "TETEPANGO", "TEZONTEPEC DE ALDAMA", "TIANGUISTENGO", "TIZAYUCA", "TLAHUELILPAN", "TLAHUILTEPA", "TLANALAPA", "TLANCHINOL", "TLAXCOAPAN", "TOLCAYUCA", "TULA DE ALLENDE", "TULANCINGO DE BRAVO", "VILLA DE TEZONTEPEC", "XOCHIATIPAN", "XOCHICOATLÁN", "YAHUALICA", "ZACUALTIPÁN DE ?NGELES", "ZAPOTLÁN DE JUÁREZ", "ZEMPOALA", "ZIMAPÁN", ""})
         Me.txtMunicipio.Location = New System.Drawing.Point(771, 3)
         Me.txtMunicipio.MaxLength = 100
         Me.txtMunicipio.Name = "txtMunicipio"
@@ -562,13 +600,25 @@ Partial Class registro
         '
         'cbxNacionalidad
         '
+        Me.cbxNacionalidad.DataSource = Me.NacionalidadBindingSource
+        Me.cbxNacionalidad.DisplayMember = "nacionalidad"
         Me.cbxNacionalidad.FormattingEnabled = True
-        Me.cbxNacionalidad.Items.AddRange(New Object() {"Mexicana:México", "Afgana:Afganistán", "Albanesa:Albania", "Alemana:Alemania", "Alto volteña:Alto volta", "Andorrana:Andorra", "Angoleña:Angola", "Argelina:Argelia", "Argentina:Argentina", "Australiana:Australia", "Austriaca:Austria", "Bahamesa:Bahamas", "Bahreina:Bahrein", "Bangladesha:Bangladesh", "Barbadesa:Barbados", "Belga:Belgica", "Beliceña:Belice", "Bermudesa:Bermudas", "Birmana:Birmania", "Boliviana:Bolivia", "Botswanesa:Botswana", "Brasileña:Brasil", "Bulgara:Bulgaria", "Burundesa:Burundi", "Butana:Butan", "Camboyana:Khemer rep(Camboya)", "Camerunesa:Camerun", "Canadiense:Canada", "Centroafricana:Rep Centroafricana", "Chadeña:Chad", "Checoslovaca:Rep. Checa", "Chilena:Chile", "China:China", "China:Taiwan", "Chipriota:Chipre", "Colombiana:Colombia", "Congoleña:Congo", "Costarricense:Costa Rica", "Cubana:Cuba", "Dahoneya:Dahoney", "Danes:Dinamarca", "Dominicana:Rep. Dominicana", "Ecuatoriana:Ecuador", "Egipcia:Egipto", "Emirata:Emiratos arabes udo", "Escosesa:Escocia", "Eslovaca:Rep. Eslovaca", "Española:España", "Estadounidense: Estados Unidos", "Estona:Estonia", "Etiope:Etiopia", "Fijena:Fiji", "Filipina:Filipinas", "Finlandesa:Finlandia", "Francesa:Francia", "Gabiana:Gambia", "Gabona:Gabon", "Galesa:Gales", "Ghanesa:Ghana", "Granadeña:Granada", "Griega:Grecia", "Guatemalteca:Guatemala", "Guinesa Ecuatoriana:Guinea Ecuatorial", "Guinesa:Guinea", "Guyanesa:Guyana", "Haitiana:Haiti", "Holandesa:Holanda", "Hondureña:Honduras", "Hungara:Hungria", "India:India", "Indonesa:Indonesia", "Inglesa:Inglaterra", "Iraki:Irak", "Irani:Iran", "Irlandesa:Irlanda", "Islandesa:Islandia", "Israeli:Israel", "Italiana:Italia", "Jamaiquina:Jamaica", "Japonesa:Japon", "Jordana:Jordania", "Katensa:Katar", "Keniana:Kenia", "Kuwaiti:Kwait", "Laosiana:Laos", "Leonesa:Sierra leona", "Lesothensa:Lesotho", "Letonesa:Letonia", "Libanesa:Libano", "Liberiana:Liberia", "Libeña:Libia", "Liechtenstein:Liechtenstein", "Lituana:Lituania", "Luxemburgo:Luxemburgo", "Madagascar:Madagascar", "Malaca:Fede.de malasia", "Malawi:Malawi", "Maldivas:Maldivas", "Mali:Mali", "Maltesa:Malta", "Marfilesa:Costa de Marfil", "Marroqui:Marruecos", "Mauricio:Mauricio", "Mauritana:Mauritania", "Monaco:Monaco", "Mongolesa:Mongolia", "Nauru:Nauru", "Neozelandesa:Nueva zelandia", "Nepalesa:Nepal", "Nicaraguense:Nicaragua", "Nigerana:Niger", "Nigeriana:Nigeria", "Norcoreana:Corea del Norte", "Norirlandesa:Irlanda del norte", "Norteamericana:Estados unidos", "Noruega:Noruega", "Omana:Oman", "Pakistani:Pakistan", "Panameña:Panama", "Paraguaya:Paraguay", "Peruana:Peru", "Polaca:Polonia", "Portoriqueña:Puerto rico", "Portuguesa:Portugal", "Rhodesiana:Rhodesia", "Ruanda:Ruanda", "Rumana:Rumania", "Rusa:Russia", "Salvadoreña:El Salvador", "Samoa Occidental:Samoa Occidental", "San marino:San Marino", "Saudi:Arabia saudita", "Senegalesa:Senegal", "Sikkim:Sikkim", "Singapur:Singapur", "Siria:Siria", "Somalia:Somalia", "Sovietica:Union Sovietica", "Sri Lanka:Sri Lanka (Ceylan)", "Suazilandesa:Suazilandia", "Sudafricana:Sudafrica", "Sudanesa:Sudan", "Sueca:Suecia", "Suiza:Suiza", "Surcoreana:Corea del Sur", "Tailandesa:Tailandia", "Tanzana:Tanzania", "Tonga:Tonga", "Tongo:Tongo", "Trinidad y Tobago:Trinidad y Tobago", "Tunecina:Tunez", "Turca:Turquia", "Ugandesa:Uganda", "Uruguaya:Uruguay", "Vaticano:Vaticano", "Venezolana:Venezuela", "Vietnamita:Vietnam", "Yemen Rep Arabe:Yemen Rep. Arabe", "Yemen Rep Dem:Yemen Rep. Dem", "Yugoslava:Yugoslavia", "Zaire:Zaire"})
         Me.cbxNacionalidad.Location = New System.Drawing.Point(814, 3)
         Me.cbxNacionalidad.MaxLength = 80
         Me.cbxNacionalidad.Name = "cbxNacionalidad"
         Me.cbxNacionalidad.Size = New System.Drawing.Size(133, 21)
         Me.cbxNacionalidad.TabIndex = 4
+        Me.cbxNacionalidad.ValueMember = "nacionalidad"
+        '
+        'NacionalidadBindingSource
+        '
+        Me.NacionalidadBindingSource.DataMember = "nacionalidad"
+        Me.NacionalidadBindingSource.DataSource = Me.Registro_control_tramites
+        '
+        'Registro_control_tramites
+        '
+        Me.Registro_control_tramites.DataSetName = "registro_control_tramites"
+        Me.Registro_control_tramites.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'txtNombre
         '
@@ -586,19 +636,31 @@ Partial Class registro
         Me.txtNut.Size = New System.Drawing.Size(100, 20)
         Me.txtNut.TabIndex = 2
         '
+        'dtFechaIngreso
+        '
+        Me.dtFechaIngreso.Checked = False
+        Me.dtFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFechaIngreso.Location = New System.Drawing.Point(97, 4)
+        Me.dtFechaIngreso.Name = "dtFechaIngreso"
+        Me.dtFechaIngreso.Size = New System.Drawing.Size(119, 20)
+        Me.dtFechaIngreso.TabIndex = 2
+        '
         'cbxTramiteSolicitado
         '
+        Me.cbxTramiteSolicitado.DataSource = Me.TramitesolicitadoBindingSource
+        Me.cbxTramiteSolicitado.DisplayMember = "tramite_solicitado"
         Me.cbxTramiteSolicitado.FormattingEnabled = True
-        Me.cbxTramiteSolicitado.Items.AddRange(New Object() {"ACTUALIZACIÓN DE CONSTANCIA DE INSCRIPCIÓN DE EMPLEADOR", "AUTORIZACIÓN DE VISA POR RAZONES HUMANITARIAS", "AUTORIZACIÓN DE VISA POR UNIDAD FAMILIAR", "AUTORIZACIÓN POR OFERTA DE EMPLEO", "CAMBIO DE CONDICIÓN DE ESTANCIA A RESIDENTE PERMANENTE POR VÍNCULO FAMILIAR", "CAMBIO DE CONDICIÓN DE ESTANCIA A RESIDENTE TEMPORAL POR VÍNCULO FAMILIAR", "CAMBIO DE CONDICIÓN DE ESTANCIA A VISITANTE POR RAZONES HUMANITARIAS", "CAMBIO DE CONDICIÓN DE ESTANCIA DE RESIDENTE TEMPORAL A RESIDENTE PERMANENTE", "CAMBIO DE CONDICIÓN DE ESTANCIA DE RESIDENTE TEMPORAL ESTUDIANTE A RESIDENTE TEMP" & _
-                "ORAL", "CAMBIO DE CONDICIÓN DE ESTANCIA DE VISITANTE POR RAZONES HUMANITARIAS A RESIDENTE" & _
-                " PERMANENTE", "CAMBIO DE CONDICIÓN DE ESTANCIA DE VISITANTE POR RAZONES HUMANITARIAS A RESIDENTE" & _
-                " TEMPORAL", "CONSTANCIA DE INSCRIPCIÓN DE EMPLEADOR", "DEVOLUCIÓN DE BILLETE DE DEPOSITO", "EXPEDICIÓN DE DOCUMENTO MIGRATORIO POR CANJE", "EXPEDICIÓN DE DOCUMENTO MIGRATORIO POR RENOVACIÓN", "NOTIFICACIÓN DE CAMBIO DE DOMICILIO", "NOTIFICACIÓN DE CAMBIO DE LUGAR DE TRABAJO", "NOTIFICACIÓN DE ESTADO CIVIL", "NOTIFICACIÓN DE NACIONALIDAD MEXICANA", "PERMISO DE SALIDA  Y REGRESO", "PERMISO PARA TRABAJAR", "REGULARIZACIÓN POR RAZONES HUMANITARIAS", "REGULARIZACIÓN POR TENER DOCUMENTO VENCIDO, POR REALIZAR ACTIVIDADES NO AUTORIZAD" & _
-                "AS", "REGULARIZACIÓN POR VÍNCULO FAMILIAR", "REPOSICIÓN DE DOCUMENTO MIGRATORIO", "SOLICITUD DE AMPLIACIÓN DE FMM", "SOLICITUD DE CORRECCIÓN DE CURP", "SOLICITUD DE CORRECCIÓN DE FMM", "SOLICITUD DE DEVOLUCIÓN DE PAGO", "OTRO"})
         Me.cbxTramiteSolicitado.Location = New System.Drawing.Point(362, 29)
         Me.cbxTramiteSolicitado.MaxLength = 150
         Me.cbxTramiteSolicitado.Name = "cbxTramiteSolicitado"
         Me.cbxTramiteSolicitado.Size = New System.Drawing.Size(585, 21)
         Me.cbxTramiteSolicitado.TabIndex = 6
+        Me.cbxTramiteSolicitado.ValueMember = "tramite_solicitado"
+        '
+        'TramitesolicitadoBindingSource
+        '
+        Me.TramitesolicitadoBindingSource.DataMember = "tramite_solicitado"
+        Me.TramitesolicitadoBindingSource.DataSource = Me.Registro_control_tramites
         '
         'Panel3
         '
@@ -631,7 +693,7 @@ Partial Class registro
         '
         'txtObservaciones
         '
-        Me.txtObservaciones.Location = New System.Drawing.Point(583, 78)
+        Me.txtObservaciones.Location = New System.Drawing.Point(583, 86)
         Me.txtObservaciones.MaxLength = 255
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
@@ -656,23 +718,32 @@ Partial Class registro
         '
         'cbxLoResuelve
         '
+        Me.cbxLoResuelve.DataSource = Me.NombreempleadoBindingSource1
+        Me.cbxLoResuelve.DisplayMember = "nombre_empleado"
         Me.cbxLoResuelve.FormattingEnabled = True
-        Me.cbxLoResuelve.Items.AddRange(New Object() {"ANA MACEDA HERNANDEZ", "CARMINA MONSSERRAT CONTRERAS ALVAREZ", "DAMARIS YAZMIN ESPINOZA RODRIGUEZ", "LINDA ALEXANDRA MARIN GONZALEZ", "MARIA CRISTINA DORANTES LAGUNA", "MARIA DEL CARMEN RIOJA ESPINOZA ", "OLGA ELEONORA LOZANO ARIAS", "ROSY CASTAÑEDA RIVERA"})
         Me.cbxLoResuelve.Location = New System.Drawing.Point(738, 45)
         Me.cbxLoResuelve.MaxLength = 150
         Me.cbxLoResuelve.Name = "cbxLoResuelve"
         Me.cbxLoResuelve.Size = New System.Drawing.Size(209, 21)
         Me.cbxLoResuelve.TabIndex = 8
+        Me.cbxLoResuelve.ValueMember = "nombre_empleado"
+        '
+        'NombreempleadoBindingSource
+        '
+        Me.NombreempleadoBindingSource.DataMember = "nombre_empleado"
+        Me.NombreempleadoBindingSource.DataSource = Me.Registro_control_tramites
         '
         'cbxRecibidoPor
         '
+        Me.cbxRecibidoPor.DataSource = Me.NombreempleadoBindingSource
+        Me.cbxRecibidoPor.DisplayMember = "nombre_empleado"
         Me.cbxRecibidoPor.FormattingEnabled = True
-        Me.cbxRecibidoPor.Items.AddRange(New Object() {"ANA MACEDA HERNANDEZ", "CARMINA MONSSERRAT CONTRERAS ALVAREZ", "DAMARIS YAZMIN ESPINOZA RODRIGUEZ", "LINDA ALEXANDRA MARIN GONZALEZ", "MARIA CRISTINA DORANTES LAGUNA", "MARIA DEL CARMEN RIOJA ESPINOZA ", "OLGA ELEONORA LOZANO ARIAS", "ROSY CASTAÑEDA RIVERA"})
         Me.cbxRecibidoPor.Location = New System.Drawing.Point(478, 45)
         Me.cbxRecibidoPor.MaxLength = 150
         Me.cbxRecibidoPor.Name = "cbxRecibidoPor"
         Me.cbxRecibidoPor.Size = New System.Drawing.Size(178, 21)
         Me.cbxRecibidoPor.TabIndex = 7
+        Me.cbxRecibidoPor.ValueMember = "nombre_empleado"
         '
         'cbxResidente
         '
@@ -686,17 +757,24 @@ Partial Class registro
         '
         'cbxStatus
         '
+        Me.cbxStatus.DataSource = Me.TipostatusBindingSource
+        Me.cbxStatus.DisplayMember = "tipo_status"
         Me.cbxStatus.FormattingEnabled = True
-        Me.cbxStatus.Items.AddRange(New Object() {"PENDIENTE", "PREEVENCIÓN", "PREEVENCIÓN Y SANCIÓN", "RESUELTO NEGATIVO", "RESUELTO POSITIVO", "SANCIÓN", "VERIFICACIÓN"})
         Me.cbxStatus.Location = New System.Drawing.Point(38, 45)
         Me.cbxStatus.MaxLength = 60
         Me.cbxStatus.Name = "cbxStatus"
         Me.cbxStatus.Size = New System.Drawing.Size(121, 21)
         Me.cbxStatus.TabIndex = 5
+        Me.cbxStatus.ValueMember = "tipo_status"
+        '
+        'TipostatusBindingSource
+        '
+        Me.TipostatusBindingSource.DataMember = "tipo_status"
+        Me.TipostatusBindingSource.DataSource = Me.Registro_control_tramites
         '
         'txtPersonaAutorizada
         '
-        Me.txtPersonaAutorizada.Location = New System.Drawing.Point(635, 7)
+        Me.txtPersonaAutorizada.Location = New System.Drawing.Point(632, 4)
         Me.txtPersonaAutorizada.MaxLength = 255
         Me.txtPersonaAutorizada.Name = "txtPersonaAutorizada"
         Me.txtPersonaAutorizada.Size = New System.Drawing.Size(312, 20)
@@ -705,7 +783,7 @@ Partial Class registro
         'txtEdad
         '
         Me.txtEdad.Enabled = False
-        Me.txtEdad.Location = New System.Drawing.Point(452, 3)
+        Me.txtEdad.Location = New System.Drawing.Point(452, 5)
         Me.txtEdad.MaxLength = 3
         Me.txtEdad.Name = "txtEdad"
         Me.txtEdad.Size = New System.Drawing.Size(59, 20)
@@ -725,7 +803,7 @@ Partial Class registro
         '
         Me.dtFechaNacimiento.Checked = False
         Me.dtFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFechaNacimiento.Location = New System.Drawing.Point(282, 3)
+        Me.dtFechaNacimiento.Location = New System.Drawing.Point(282, 4)
         Me.dtFechaNacimiento.Name = "dtFechaNacimiento"
         Me.dtFechaNacimiento.Size = New System.Drawing.Size(119, 20)
         Me.dtFechaNacimiento.TabIndex = 2
@@ -745,6 +823,8 @@ Partial Class registro
         Me.btnModificar.AccessibleDescription = "Actualizar Datos"
         Me.btnModificar.AccessibleName = "Actualizar Datos"
         Me.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnModificar.Location = New System.Drawing.Point(921, 471)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(79, 26)
@@ -765,6 +845,7 @@ Partial Class registro
         'btnGuardar
         '
         Me.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGuardar.Location = New System.Drawing.Point(921, 501)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(79, 26)
@@ -784,7 +865,7 @@ Partial Class registro
         'txtFecha
         '
         Me.txtFecha.Enabled = False
-        Me.txtFecha.Location = New System.Drawing.Point(12, 54)
+        Me.txtFecha.Location = New System.Drawing.Point(70, 40)
         Me.txtFecha.Name = "txtFecha"
         Me.txtFecha.Size = New System.Drawing.Size(62, 20)
         Me.txtFecha.TabIndex = 9
@@ -793,6 +874,7 @@ Partial Class registro
         'btnLimpiar
         '
         Me.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLimpiar.Location = New System.Drawing.Point(921, 530)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(79, 26)
@@ -810,16 +892,6 @@ Partial Class registro
         Me.Label1.TabIndex = 11
         Me.Label1.Text = "INSTITUTO NACIONAL DE MIGRACIÓN" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9)
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(190, 45)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(224, 15)
-        Me.Label2.TabIndex = 11
-        Me.Label2.Text = "DELEGACIÓN FEDERAL HIDALGO" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9)
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -836,111 +908,250 @@ Partial Class registro
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(190, 74)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(302, 15)
+        Me.Label4.Size = New System.Drawing.Size(266, 15)
         Me.Label4.TabIndex = 11
-        Me.Label4.Text = "CONTROL DE TRAMITES MIGRATORIOS 2014" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9)
+        Me.Label4.Text = "CONTROL DE TRAMITES MIGRATORIOS" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.OperacionesToolStripMenuItem, Me.BusrcarToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.NotificacionesToolStripMenuItem, Me.OperacionesToolStripMenuItem, Me.BusrcarToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1041, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1049, 24)
         Me.MenuStrip1.TabIndex = 12
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ArchivoToolStripMenuItem
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SincronizarToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
+        'SincronizarToolStripMenuItem
+        '
+        Me.SincronizarToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.sincronizar
+        Me.SincronizarToolStripMenuItem.Name = "SincronizarToolStripMenuItem"
+        Me.SincronizarToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5
+        Me.SincronizarToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.SincronizarToolStripMenuItem.Text = "Actualizar BD"
+        '
         'SalirToolStripMenuItem
         '
+        Me.SalirToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.salir
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
-        Me.SalirToolStripMenuItem.Text = "Salir"
+        Me.SalirToolStripMenuItem.ShortcutKeyDisplayString = ""
+        Me.SalirToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.SalirToolStripMenuItem.Text = "&Salir"
+        '
+        'NotificacionesToolStripMenuItem
+        '
+        Me.NotificacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PendientesToolStripMenuItem})
+        Me.NotificacionesToolStripMenuItem.Name = "NotificacionesToolStripMenuItem"
+        Me.NotificacionesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.NotificacionesToolStripMenuItem.Text = "Tramites"
+        '
+        'PendientesToolStripMenuItem
+        '
+        Me.PendientesToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.notification
+        Me.PendientesToolStripMenuItem.Name = "PendientesToolStripMenuItem"
+        Me.PendientesToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
+        Me.PendientesToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.PendientesToolStripMenuItem.Text = "Pendientes"
         '
         'OperacionesToolStripMenuItem
         '
-        Me.OperacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActualizarToolStripMenuItem, Me.GuardarToolStripMenuItem, Me.LimpiarToolStripMenuItem, Me.EliminarToolStripMenuItem})
+        Me.OperacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActualizarToolStripMenuItem, Me.GuardarToolStripMenuItem, Me.LimpiarToolStripMenuItem, Me.EliminarToolStripMenuItem, Me.AgregarToolStripMenuItem})
         Me.OperacionesToolStripMenuItem.Name = "OperacionesToolStripMenuItem"
+        Me.OperacionesToolStripMenuItem.RightToLeftAutoMirrorImage = True
+        Me.OperacionesToolStripMenuItem.ShowShortcutKeys = False
         Me.OperacionesToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
-        Me.OperacionesToolStripMenuItem.Text = "Operación"
+        Me.OperacionesToolStripMenuItem.Text = "&Operación"
         '
         'ActualizarToolStripMenuItem
         '
+        Me.ActualizarToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.update
         Me.ActualizarToolStripMenuItem.Name = "ActualizarToolStripMenuItem"
-        Me.ActualizarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
-        Me.ActualizarToolStripMenuItem.Text = "Actualizar"
+        Me.ActualizarToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
+        Me.ActualizarToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.ActualizarToolStripMenuItem.Text = "&Actualizar"
         '
         'GuardarToolStripMenuItem
         '
+        Me.GuardarToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.save
         Me.GuardarToolStripMenuItem.Name = "GuardarToolStripMenuItem"
-        Me.GuardarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
-        Me.GuardarToolStripMenuItem.Text = "Guardar"
+        Me.GuardarToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.G), System.Windows.Forms.Keys)
+        Me.GuardarToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.GuardarToolStripMenuItem.Text = "&Guardar"
         '
         'LimpiarToolStripMenuItem
         '
+        Me.LimpiarToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.erase1
         Me.LimpiarToolStripMenuItem.Name = "LimpiarToolStripMenuItem"
-        Me.LimpiarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
-        Me.LimpiarToolStripMenuItem.Text = "Limpiar"
+        Me.LimpiarToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.L), System.Windows.Forms.Keys)
+        Me.LimpiarToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.LimpiarToolStripMenuItem.Text = "&Limpiar"
         '
         'EliminarToolStripMenuItem
         '
+        Me.EliminarToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.delete
         Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        Me.EliminarToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.EliminarToolStripMenuItem.Text = "&Eliminar"
+        '
+        'AgregarToolStripMenuItem
+        '
+        Me.AgregarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NacionalidadToolStripMenuItem2, Me.TramiteToolStripMenuItem, Me.StatusToolStripMenuItem, Me.PersonalToolStripMenuItem})
+        Me.AgregarToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.add
+        Me.AgregarToolStripMenuItem.Name = "AgregarToolStripMenuItem"
+        Me.AgregarToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.AgregarToolStripMenuItem.Text = "Agregar"
+        '
+        'NacionalidadToolStripMenuItem2
+        '
+        Me.NacionalidadToolStripMenuItem2.Image = Global.control_de_tramites.My.Resources.Resources.national
+        Me.NacionalidadToolStripMenuItem2.Name = "NacionalidadToolStripMenuItem2"
+        Me.NacionalidadToolStripMenuItem2.Size = New System.Drawing.Size(144, 22)
+        Me.NacionalidadToolStripMenuItem2.Text = "Nacionalidad"
+        '
+        'TramiteToolStripMenuItem
+        '
+        Me.TramiteToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.tramite
+        Me.TramiteToolStripMenuItem.Name = "TramiteToolStripMenuItem"
+        Me.TramiteToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.TramiteToolStripMenuItem.Text = "Tramite"
+        '
+        'StatusToolStripMenuItem
+        '
+        Me.StatusToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.status
+        Me.StatusToolStripMenuItem.Name = "StatusToolStripMenuItem"
+        Me.StatusToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.StatusToolStripMenuItem.Text = "Status"
+        '
+        'PersonalToolStripMenuItem
+        '
+        Me.PersonalToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.personal
+        Me.PersonalToolStripMenuItem.Name = "PersonalToolStripMenuItem"
+        Me.PersonalToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.PersonalToolStripMenuItem.Text = "Personal"
         '
         'BusrcarToolStripMenuItem
         '
-        Me.BusrcarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BeneficiarioToolStripMenuItem, Me.PendienteToolStripMenuItem})
+        Me.BusrcarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BeneficiarioToolStripMenuItem, Me.PendienteToolStripMenuItem, Me.NUTToolStripMenuItem})
         Me.BusrcarToolStripMenuItem.Name = "BusrcarToolStripMenuItem"
         Me.BusrcarToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-        Me.BusrcarToolStripMenuItem.Text = "Buscar"
+        Me.BusrcarToolStripMenuItem.Text = "&Buscar"
         '
         'BeneficiarioToolStripMenuItem
         '
+        Me.BeneficiarioToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.people
         Me.BeneficiarioToolStripMenuItem.Name = "BeneficiarioToolStripMenuItem"
-        Me.BeneficiarioToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
-        Me.BeneficiarioToolStripMenuItem.Text = "Beneficiario"
+        Me.BeneficiarioToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
+        Me.BeneficiarioToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.BeneficiarioToolStripMenuItem.Text = "Beneficia&rio"
         '
         'PendienteToolStripMenuItem
         '
+        Me.PendienteToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.status
         Me.PendienteToolStripMenuItem.Name = "PendienteToolStripMenuItem"
-        Me.PendienteToolStripMenuItem.Size = New System.Drawing.Size(136, 22)
-        Me.PendienteToolStripMenuItem.Text = "Status"
+        Me.PendienteToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.T), System.Windows.Forms.Keys)
+        Me.PendienteToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.PendienteToolStripMenuItem.Text = "S&tatus"
+        '
+        'NUTToolStripMenuItem
+        '
+        Me.NUTToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.NUT
+        Me.NUTToolStripMenuItem.Name = "NUTToolStripMenuItem"
+        Me.NUTToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
+        Me.NUTToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.NUTToolStripMenuItem.Text = "NUT"
         '
         'ReportesToolStripMenuItem
         '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ControlDeTramitesToolStripMenuItem})
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AnioToolStripMenuItem, Me.ControlDeTramitesPorMesToolStripMenuItem, Me.DiarioToolStripMenuItem, Me.ControlDeTramitesToolStripMenuItem, Me.NacionalidadToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ReportesToolStripMenuItem.Text = "Reporte"
+        Me.ReportesToolStripMenuItem.Text = "&Reporte"
+        '
+        'AnioToolStripMenuItem
+        '
+        Me.AnioToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.year
+        Me.AnioToolStripMenuItem.Name = "AnioToolStripMenuItem"
+        Me.AnioToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.U), System.Windows.Forms.Keys)
+        Me.AnioToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.AnioToolStripMenuItem.Text = "An&ual"
+        '
+        'ControlDeTramitesPorMesToolStripMenuItem
+        '
+        Me.ControlDeTramitesPorMesToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.month
+        Me.ControlDeTramitesPorMesToolStripMenuItem.Name = "ControlDeTramitesPorMesToolStripMenuItem"
+        Me.ControlDeTramitesPorMesToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.M), System.Windows.Forms.Keys)
+        Me.ControlDeTramitesPorMesToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.ControlDeTramitesPorMesToolStripMenuItem.Text = "&Mensual"
+        '
+        'DiarioToolStripMenuItem
+        '
+        Me.DiarioToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.day
+        Me.DiarioToolStripMenuItem.Name = "DiarioToolStripMenuItem"
+        Me.DiarioToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.I), System.Windows.Forms.Keys)
+        Me.DiarioToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.DiarioToolStripMenuItem.Text = "Diar&io"
         '
         'ControlDeTramitesToolStripMenuItem
         '
+        Me.ControlDeTramitesToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.general1
         Me.ControlDeTramitesToolStripMenuItem.Name = "ControlDeTramitesToolStripMenuItem"
-        Me.ControlDeTramitesToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
-        Me.ControlDeTramitesToolStripMenuItem.Text = "Control de Tramites"
+        Me.ControlDeTramitesToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Alt) _
+            Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
+        Me.ControlDeTramitesToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.ControlDeTramitesToolStripMenuItem.Tag = "e"
+        Me.ControlDeTramitesToolStripMenuItem.Text = "G&eneral"
         '
-        'txtNombreSearch
+        'NacionalidadToolStripMenuItem
         '
-        Me.txtNombreSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtNombreSearch.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.txtNombreSearch.Location = New System.Drawing.Point(197, 451)
-        Me.txtNombreSearch.Name = "txtNombreSearch"
-        Me.txtNombreSearch.Size = New System.Drawing.Size(324, 20)
-        Me.txtNombreSearch.TabIndex = 12
+        Me.NacionalidadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TramiteSolicitadoToolStripMenuItem, Me.NacionalidadToolStripMenuItem1})
+        Me.NacionalidadToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.nation
+        Me.NacionalidadToolStripMenuItem.Name = "NacionalidadToolStripMenuItem"
+        Me.NacionalidadToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.NacionalidadToolStripMenuItem.Text = "Nacionalidad"
         '
-        'lblNombreSearch
+        'TramiteSolicitadoToolStripMenuItem
         '
-        Me.lblNombreSearch.Location = New System.Drawing.Point(50, 454)
-        Me.lblNombreSearch.Name = "lblNombreSearch"
-        Me.lblNombreSearch.Size = New System.Drawing.Size(141, 17)
-        Me.lblNombreSearch.TabIndex = 0
-        Me.lblNombreSearch.Text = "Ingresa nombre a buscar:"
+        Me.TramiteSolicitadoToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.tramite
+        Me.TramiteSolicitadoToolStripMenuItem.Name = "TramiteSolicitadoToolStripMenuItem"
+        Me.TramiteSolicitadoToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.TramiteSolicitadoToolStripMenuItem.Text = "Tramite Solicitado"
+        '
+        'NacionalidadToolStripMenuItem1
+        '
+        Me.NacionalidadToolStripMenuItem1.Image = Global.control_de_tramites.My.Resources.Resources.national
+        Me.NacionalidadToolStripMenuItem1.Name = "NacionalidadToolStripMenuItem1"
+        Me.NacionalidadToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
+        Me.NacionalidadToolStripMenuItem1.Text = "Nacionalidad"
+        '
+        'AcercaDeToolStripMenuItem
+        '
+        Me.AcercaDeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DesarrolladorToolStripMenuItem})
+        Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.AcercaDeToolStripMenuItem.Text = "Acerca de"
+        '
+        'DesarrolladorToolStripMenuItem
+        '
+        Me.DesarrolladorToolStripMenuItem.Image = Global.control_de_tramites.My.Resources.Resources.desarrollador
+        Me.DesarrolladorToolStripMenuItem.Name = "DesarrolladorToolStripMenuItem"
+        Me.DesarrolladorToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.DesarrolladorToolStripMenuItem.Text = "Desarrollador"
         '
         'Registro_control_tramitesDataGridView
         '
@@ -1158,15 +1369,6 @@ Partial Class registro
         Me.documento_entregado.ReadOnly = True
         Me.documento_entregado.Visible = False
         '
-        'btnEliminar
-        '
-        Me.btnEliminar.Location = New System.Drawing.Point(921, 560)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(79, 26)
-        Me.btnEliminar.TabIndex = 16
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
-        '
         'IdcontroltramiteDataGridViewTextBoxColumn
         '
         Me.IdcontroltramiteDataGridViewTextBoxColumn.DataPropertyName = "id_control_tramite"
@@ -1380,29 +1582,109 @@ Partial Class registro
         Me.Registro_control_tramitesBindingSource.DataMember = "registro_control_tramites"
         Me.Registro_control_tramitesBindingSource.DataSource = Me.Registro_control_tramites
         '
-        'Registro_control_tramites
+        'btnEliminar
         '
-        Me.Registro_control_tramites.DataSetName = "registro_control_tramites"
-        Me.Registro_control_tramites.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Location = New System.Drawing.Point(921, 560)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(79, 26)
+        Me.btnEliminar.TabIndex = 16
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(190, 46)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(224, 15)
+        Me.Label2.TabIndex = 11
+        Me.Label2.Text = "DELEGACIÓN FEDERAL HIDALGO"
+        '
+        'dtFechaControl
+        '
+        Me.dtFechaControl.CustomFormat = "yyyy"
+        Me.dtFechaControl.Enabled = False
+        Me.dtFechaControl.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFechaControl.Location = New System.Drawing.Point(532, 42)
+        Me.dtFechaControl.Name = "dtFechaControl"
+        Me.dtFechaControl.Size = New System.Drawing.Size(44, 20)
+        Me.dtFechaControl.TabIndex = 17
+        Me.dtFechaControl.Visible = False
+        '
+        'lblFecha
+        '
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFecha.Location = New System.Drawing.Point(453, 74)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(51, 15)
+        Me.lblFecha.TabIndex = 11
+        Me.lblFecha.Text = "FECHA"
         '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.nacionalidadTableAdapter = Nothing
+        Me.TableAdapterManager.nombre_empleadoTableAdapter = Nothing
         Me.TableAdapterManager.registro_control_tramitesTableAdapter = Me.Registro_control_tramitesTableAdapter
+        Me.TableAdapterManager.tipo_statusTableAdapter = Nothing
+        Me.TableAdapterManager.tramite_solicitadoTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = control_de_tramites.registro_control_tramitesTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'Registro_control_tramitesTableAdapter
         '
         Me.Registro_control_tramitesTableAdapter.ClearBeforeFill = True
         '
-        'dtFechaIngreso
+        'Registro_control_tramites1
         '
-        Me.dtFechaIngreso.Checked = False
-        Me.dtFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFechaIngreso.Location = New System.Drawing.Point(97, 4)
-        Me.dtFechaIngreso.Name = "dtFechaIngreso"
-        Me.dtFechaIngreso.Size = New System.Drawing.Size(119, 20)
-        Me.dtFechaIngreso.TabIndex = 2
+        Me.Registro_control_tramites1.DataSetName = "registro_control_tramites"
+        Me.Registro_control_tramites1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Tramite_solicitadoTableAdapter
+        '
+        Me.Tramite_solicitadoTableAdapter.ClearBeforeFill = True
+        '
+        'Tipo_statusTableAdapter
+        '
+        Me.Tipo_statusTableAdapter.ClearBeforeFill = True
+        '
+        'Nombre_empleadoTableAdapter
+        '
+        Me.Nombre_empleadoTableAdapter.ClearBeforeFill = True
+        '
+        'NacionalidadTableAdapter
+        '
+        Me.NacionalidadTableAdapter.ClearBeforeFill = True
+        '
+        'actualizar
+        '
+        Me.actualizar.Location = New System.Drawing.Point(638, 76)
+        Me.actualizar.Name = "actualizar"
+        Me.actualizar.Size = New System.Drawing.Size(351, 23)
+        Me.actualizar.TabIndex = 18
+        Me.actualizar.Visible = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(45, 28)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(146, 61)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'RegistrocontroltramitesBindingSource
+        '
+        Me.RegistrocontroltramitesBindingSource.DataSource = Me.Registro_control_tramites
+        Me.RegistrocontroltramitesBindingSource.Position = 0
+        '
+        'NombreempleadoBindingSource1
+        '
+        Me.NombreempleadoBindingSource1.DataMember = "nombre_empleado"
+        Me.NombreempleadoBindingSource1.DataSource = Me.Registro_control_tramites
         '
         'registro
         '
@@ -1410,13 +1692,14 @@ Partial Class registro
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1041, 618)
+        Me.ClientSize = New System.Drawing.Size(1049, 608)
+        Me.Controls.Add(Me.actualizar)
+        Me.Controls.Add(Me.dtFechaControl)
         Me.Controls.Add(Me.btnEliminar)
-        Me.Controls.Add(Me.lblNombreSearch)
-        Me.Controls.Add(Me.txtNombreSearch)
+        Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.txtFecha)
@@ -1426,30 +1709,37 @@ Partial Class registro
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.lblTitulo)
-        Me.Controls.Add(Me.Registro_control_tramitesDataGridView)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Controls.Add(Me.Registro_control_tramitesDataGridView)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.MaximumSize = New System.Drawing.Size(1057, 657)
+        Me.MaximumSize = New System.Drawing.Size(2000, 1200)
         Me.Name = "registro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Control de Tramites"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.NacionalidadBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Registro_control_tramites, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TramitesolicitadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.NombreempleadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TipostatusBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.Registro_control_tramitesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Registro_control_tramitesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Registro_control_tramites, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Registro_control_tramites1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RegistrocontroltramitesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NombreempleadoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1518,7 +1808,6 @@ Partial Class registro
     Friend WithEvents cbxTramiteSolicitado As System.Windows.Forms.ComboBox
     Friend WithEvents btnReporte As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
@@ -1535,7 +1824,6 @@ Partial Class registro
     Friend WithEvents ReportesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ControlDeTramitesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents txtNombreSearch As System.Windows.Forms.TextBox
-    Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents lblNombreSearch As System.Windows.Forms.Label
     Friend WithEvents Registro_control_tramitesTableAdapter As control_de_tramites.registro_control_tramitesTableAdapters.registro_control_tramitesTableAdapter
     Friend WithEvents Registro_control_tramitesDataGridView As System.Windows.Forms.DataGridView
@@ -1595,6 +1883,38 @@ Partial Class registro
     Friend WithEvents EmpresaservicioDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DocumentoentregadoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dtFechaIngreso As System.Windows.Forms.DateTimePicker
+    Friend WithEvents ControlDeTramitesPorMesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AnioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NUTToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents dtFechaControl As System.Windows.Forms.DateTimePicker
+    Friend WithEvents lblFecha As System.Windows.Forms.Label
+    Friend WithEvents AcercaDeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DesarrolladorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SincronizarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DiarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NotificacionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PendientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Registro_control_tramites1 As control_de_tramites.registro_control_tramites
+    Friend WithEvents NacionalidadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TramiteSolicitadoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NacionalidadToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TramitesolicitadoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents Tramite_solicitadoTableAdapter As control_de_tramites.registro_control_tramitesTableAdapters.tramite_solicitadoTableAdapter
+    Friend WithEvents TipostatusBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents Tipo_statusTableAdapter As control_de_tramites.registro_control_tramitesTableAdapters.tipo_statusTableAdapter
+    Friend WithEvents NombreempleadoBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents Nombre_empleadoTableAdapter As control_de_tramites.registro_control_tramitesTableAdapters.nombre_empleadoTableAdapter
+    Friend WithEvents NacionalidadBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents NacionalidadTableAdapter As control_de_tramites.registro_control_tramitesTableAdapters.nacionalidadTableAdapter
+    Friend WithEvents AgregarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NacionalidadToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TramiteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StatusToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PersonalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents actualizar As System.Windows.Forms.ProgressBar
+    Friend WithEvents NombreempleadoBindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents RegistrocontroltramitesBindingSource As System.Windows.Forms.BindingSource
 
 
 

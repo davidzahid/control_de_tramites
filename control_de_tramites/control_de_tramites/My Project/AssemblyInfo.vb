@@ -11,11 +11,11 @@ Imports System.Runtime.InteropServices
 ' Revisar los valores de los atributos del ensamblado
 
 <Assembly: AssemblyTitle("Control de Tramites")> 
-<Assembly: AssemblyDescription("Registro de Control de Tramites del Instituto Nacional de Migración")> 
-<Assembly: AssemblyCompany("Instituto Nacional de Migración | www.zahid.mx")> 
+<Assembly: AssemblyDescription("Control de Tramites Migratorios del Instituto Nacional de Migración | Delegación Federal Hidalgo")> 
+<Assembly: AssemblyCompany("Instituto Nacional de Migración | www.zahid.mx | contacto@zahid.mx")> 
 <Assembly: AssemblyProduct("Control de Tramites")> 
 <Assembly: AssemblyCopyright("David Zahid Jiménez Grez Copyright ©  2014")> 
-<Assembly: AssemblyTrademark("www.zahid.mx | contacto@zahid.mx")> 
+<Assembly: AssemblyTrademark("| contacto@zahid.mx | www.zahid.mx |")> 
 
 <Assembly: ComVisible(True)> 
 
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' mediante el asterisco ('*'), como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("2.0.0.0")> 
 <Assembly: AssemblyFileVersion("1.0.0.0")> 
 
 <Assembly: NeutralResourcesLanguageAttribute("es")> 

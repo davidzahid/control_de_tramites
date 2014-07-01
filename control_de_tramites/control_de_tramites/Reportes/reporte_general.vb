@@ -1,4 +1,4 @@
-﻿Public Class Form1
+﻿Public Class reporte_general
 
 
 
@@ -11,7 +11,7 @@
         'CONTACTO@ZAHID.MX
         'WWW.ZAHID.MX
         'TODO: esta línea de código carga datos en la tabla 'registro_control_tramites.registro_control_tramites' Puede moverla o quitarla según sea necesario.
-      
+
         Me.ReportViewer1.RefreshReport()
     End Sub
 
